@@ -13,14 +13,16 @@
 </head>
 <body>
 <code class="code"><span class="keyword">sig</span><br>
-&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Common</span>&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;intf&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>element&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventTarget&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>node&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]<br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;className&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]&nbsp;<span class="constructor">Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setClassName&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]&nbsp;<span class="constructor">Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"className"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"className"</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cast&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]&nbsp;<span class="constructor">Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;<span class="constructor">Common</span>.t&nbsp;option<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.intf&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t&nbsp;option<br>
 <span class="keyword">end</span></code></body></html>

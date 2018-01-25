@@ -1,12 +1,12 @@
 (**)
 
-module Common = Yawaramin_BsWebapi_Common
-
 type intf = [Yawaramin_BsWebapi_Node.intf | `element]
+type 'a t = ([> intf] as 'a) Yawaramin_BsWebapi_Common.t
 
-external className: [> intf] Common.t -> string = "" [@@bs.get]
-external setClassName: [> intf] Common.t -> string -> unit =
-  "className" [@@bs.set]
+external className: 'a t -> string = "" [@@bs.get]
+external setClassName: 'a t -> string -> unit = "className" [@@bs.set]
 
 (** [cast t] downcasts a supertype of [Element] to [Element]. *)
-val cast: [< intf] Common.t -> intf Common.t option
+val cast:
+  [< intf] Yawaramin_BsWebapi_Common.t ->
+  intf Yawaramin_BsWebapi_Common.t option

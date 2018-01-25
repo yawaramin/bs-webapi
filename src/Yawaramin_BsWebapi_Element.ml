@@ -1,13 +1,11 @@
-module Common = Yawaramin_BsWebapi_Common
-
 type intf = [Yawaramin_BsWebapi_Node.intf | `element]
+type 'a t = ([> intf] as 'a) Yawaramin_BsWebapi_Common.t
 
-external className: [> intf] Common.t -> string = "" [@@bs.get]
-external setClassName: [> intf] Common.t -> string -> unit =
-  "className" [@@bs.set]
+external className: 'a t -> string = "" [@@bs.get]
+external setClassName: 'a t -> string -> unit = "className" [@@bs.set]
 
 let cast t = t
-  |> Common.unsafeCoerce
+  |> Yawaramin_BsWebapi_Common.unsafeCoerce
   |> className
-  |> Common.unsafeCoerce
+  |> Yawaramin_BsWebapi_Common.unsafeCoerce
   |> Js.Nullable.to_opt

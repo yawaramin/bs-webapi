@@ -27,12 +27,16 @@
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi_Node.Common.html">Common</a>: <code class="type"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></code></pre>
 <pre><span id="TYPEintf"><span class="keyword">type</span> <code class="type"></code>intf</span> = <code class="type">[ `eventTarget | `node ]</code> </pre>
 
 
-<pre><span id="VALbaseURI"><span class="keyword">val</span> baseURI</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] Common.t -> string</code></pre>
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] Common.t -><br>       <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> Common.t option</code></pre><div class="info ">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ]</code> t</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+
+
+<pre><span id="VALbaseURI"><span class="keyword">val</span> baseURI</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> string</code></pre>
+<pre><span id="VALchildNodes"><span class="keyword">val</span> childNodes</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> array</code></pre>
+<pre><span id="VALfirstChild"><span class="keyword">val</span> firstChild</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre>
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> -><br>       <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
 <code class="code">cast t</code> downcasts an <code class="code"><span class="constructor">EventTarget</span></code> to a <code class="code"><span class="constructor">Node</span></code>.<br>
 </div>
 </body></html>
