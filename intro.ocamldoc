@@ -1,0 +1,22 @@
+{!indexlist}
+{!modules: Yawaramin_BsWebapi}
+
+BuckleScript bindings to the
+{{: https://developer.mozilla.org/en-US/docs/Web/API} Web API}.
+
+These bindings are organised into modules that correspond to the API
+class hierarchy. All modules in the hierarchy share a common
+[EventTarget] modelled as an abstract type. If you have a value of, say,
+an [HTMLElement], you will be able to manipulate it with the relevant
+functions in all the modules which represent its supertypes in the
+hierarchy–so, [Element], [Node], and [EventTarget].
+
+This means that you can, for example, directly add an event listener to
+any HTML element just by using the [EventTarget.addEventListener]
+function. You can also {i downcast} a value to a subtype and then call
+the relevant functions with that. Downcasting is done safely (by checking
+if the value you provided supports a crucial property of the type you
+want) so you will always have to account for possible failure to
+downcast.
+
+Examples: TBD!

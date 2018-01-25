@@ -1,7 +1,4 @@
-(** Interface from which a number of DOM API object types inherit.
-
-    See
-    {{: https://developer.mozilla.org/en-US/docs/Web/API/Node} https://developer.mozilla.org/en-US/docs/Web/API/Node} *)
+(**)
 
 module Common = Yawaramin_BsWebapi_Common
 

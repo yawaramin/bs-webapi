@@ -20,30 +20,38 @@
 <li><a href="index_values.html">Index of values</a></li>
 <li><a href="index_modules.html">Index of modules</a></li>
 </ul>
-<br/><br>
+
+<br>
 <table class="indextable">
-<tr><td class="module"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></td><td><div class="info">
-Common WebAPI types and operations.
-</div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a></td><td><div class="info">
-The most general base class from which all objects in a <code class="code"><span class="constructor">Document</span></code>
-    inherit.
-</div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi_EventTarget.html">Yawaramin_BsWebapi_EventTarget</a></td><td><div class="info">
-Interface implemented by objects that can receive events and may have
-    listeners for them.
-</div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a></td><td><div class="info">
-Interface from which a number of DOM API object types inherit.
-</div>
-</td></tr>
 <tr><td class="module"><a href="Yawaramin_BsWebapi.html">Yawaramin_BsWebapi</a></td><td><div class="info">
-Index module for ease of use.
+The Web API.
 </div>
 </td></tr>
 </table>
+
+<p>
+
+BuckleScript bindings to the
+<a href=" https://developer.mozilla.org/en-US/docs/Web/API"> Web API</a>.
+<p>
+
+These bindings are organised into modules that correspond to the API
+class hierarchy. All modules in the hierarchy share a common
+<code class="code"><span class="constructor">EventTarget</span></code> modelled as an abstract type. If you have a value of, say,
+an <code class="code"><span class="constructor">HTMLElement</span></code>, you will be able to manipulate it with the relevant
+functions in all the modules which represent its supertypes in the
+hierarchy–so, <code class="code"><span class="constructor">Element</span></code>, <code class="code"><span class="constructor">Node</span></code>, and <code class="code"><span class="constructor">EventTarget</span></code>.
+<p>
+
+This means that you can, for example, directly add an event listener to
+any HTML element just by using the <code class="code"><span class="constructor">EventTarget</span>.addEventListener</code>
+function. You can also <i>downcast</i> a value to a subtype and then call
+the relevant functions with that. Downcasting is done safely (by checking
+if the value you provided supports a crucial property of the type you
+want) so you will always have to account for possible failure to
+downcast.
+<p>
+
+Examples: TBD!<br>
 </body>
 </html>

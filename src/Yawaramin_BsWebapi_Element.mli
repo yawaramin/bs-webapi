@@ -1,8 +1,4 @@
-(** The most general base class from which all objects in a [Document]
-    inherit.
-
-    See
-    {{: https://developer.mozilla.org/en-US/docs/Web/API/Element} https://developer.mozilla.org/en-US/docs/Web/API/Element} *)
+(**)
 
 module Common = Yawaramin_BsWebapi_Common
 

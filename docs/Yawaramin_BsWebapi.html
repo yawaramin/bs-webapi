@@ -22,11 +22,25 @@
 <h1>Module <a href="type_Yawaramin_BsWebapi.html">Yawaramin_BsWebapi</a></h1>
 
 <pre><span class="keyword">module</span> Yawaramin_BsWebapi: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Index module for ease of use. Hierarchically nests the other modules.<br>
+The Web API.<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Common.html">Common</a>: <code class="type"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.EventTarget.html">EventTarget</a>: <code class="type"><a href="Yawaramin_BsWebapi_EventTarget.html">Yawaramin_BsWebapi_EventTarget</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Node.html">Node</a>: <code class="type"><a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Element.html">Element</a>: <code class="type"><a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Common.html">Common</a>: <code class="type"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></code></pre><div class="info">
+Definitions common to the entire Web API.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.EventTarget.html">EventTarget</a>: <code class="type"><a href="Yawaramin_BsWebapi_EventTarget.html">Yawaramin_BsWebapi_EventTarget</a></code></pre><div class="info">
+Interface implemented by objects that can receive events and may have
+  listeners for them.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Node.html">Node</a>: <code class="type"><a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a></code></pre><div class="info">
+Interface from which a number of DOM API object types inherit.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Element.html">Element</a>: <code class="type"><a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a></code></pre><div class="info">
+The most general base class from which all objects in a <code class="code"><span class="constructor">Document</span></code>
+    inherit.
+</div>
+</body></html>

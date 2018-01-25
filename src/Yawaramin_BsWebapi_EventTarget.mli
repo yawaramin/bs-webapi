@@ -1,8 +1,4 @@
-(** Interface implemented by objects that can receive events and may have
-    listeners for them.
-
-    See
-    {{: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget} https://developer.mozilla.org/en-US/docs/Web/API/EventTarget} *)
+(**)
 
 module Common = Yawaramin_BsWebapi_Common
 type intf = [`eventTarget]

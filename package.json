@@ -5,7 +5,7 @@
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w",
-    "docs": "ocamldoc -html -colorize-code -d docs -I node_modules/bs-platform/lib/ocaml -I lib/bs/src src/*.mli src/Yawaramin_BsWebapi.ml"
+    "docs": "ocamldoc -html -colorize-code -d docs -intro intro.ocamldoc -I node_modules/bs-platform/lib/ocaml -I lib/bs/src src/*.mli src/Yawaramin_BsWebapi.ml"
   },
   "keywords": [
     "BuckleScript",
