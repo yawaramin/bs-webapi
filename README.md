@@ -13,6 +13,10 @@ Right now, this package is just a proof-of-concept; if it proves to
 scale, I will cover more and more of the Web API surface area, as time
 allows. PRs welcome!
 
+## API Documentation
+
+See https://yawaramin.github.io/bs-webapi
+
 ## Build
 
     bsb -make-world

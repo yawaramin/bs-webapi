@@ -26,7 +26,26 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'_</code> t</span> </pre>
 <div class="info ">
 A DOM object starting from <code class="code"><span class="constructor">EventTarget</span></code> and extending to any of its
-    subtypes.<br>
+    subtypes.
+<p>
+
+    The type parameter is a phantom type (a 'tag') that represents the
+    exact subtype of <code class="code"><span class="constructor">EventTarget</span></code> that you're dealing with. E.g., if you
+    have a <code class="code">[&lt; <span class="constructor">Element</span>.intf] t</code>, that means you have something that
+    implements the <code class="code"><span class="constructor">Element</span></code> (and by extension <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">EventTarget</span></code>)
+    interfaces.
+<p>
+
+    Thus, you can use any of the operations from those modules on values
+    of this type. But you can't use operations from modules which
+    represent subtypes--unless you downcast the value to that subtype.
+<p>
+
+    Downcasting is implemented by each module with the <code class="code">cast</code> function,
+    which safely downcasts by testing the value for a crucial member
+    property it must have to conform to the target type. If it does
+    conform, the cast function returns the downcast value wrapped in a
+    <code class="code"><span class="constructor">Some</span></code>; if not, it returns a <code class="code"><span class="constructor">None</span></code>.<br>
 </div>
 
 
