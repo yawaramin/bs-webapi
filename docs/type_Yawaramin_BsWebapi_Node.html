@@ -25,6 +25,23 @@
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;firstChild&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;lastChild&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nextSibling&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nodeName&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nodeType&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nodeValue&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setNodeValue&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cast&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t&nbsp;option<br>
