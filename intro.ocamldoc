@@ -9,7 +9,7 @@ class hierarchy. All modules in the hierarchy share a common
 [EventTarget] modelled as an abstract type. If you have a value of, say,
 an [HTMLElement], you will be able to manipulate it with the relevant
 functions in all the modules which represent its supertypes in the
-hierarchy–so, [Element], [Node], and [EventTarget].
+hierarchy--so, [Element], [Node], and [EventTarget].
 
 This means that you can, for example, directly add an event listener to
 any HTML element just by using the [EventTarget.addEventListener]
@@ -19,4 +19,31 @@ if the value you provided supports a crucial property of the type you
 want) so you will always have to account for possible failure to
 downcast.
 
-Examples: TBD!
+Hopefully, this type safety also translates to errors that are easier to
+understand. For example:
+
+{v We've found a bug for you!
+  /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 2:40-45
+
+  1 | let test (target: Yawaramin_BsWebapi_EventTarget.intf Yawaramin_BsWebap
+      i_Common.t) =
+  2 |   Yawaramin_BsWebapi_Element.className target
+
+  This has type:
+    Yawaramin_BsWebapi_EventTarget.intf Yawaramin_BsWebapi_Common.t
+  But somewhere wanted:
+    ([> Yawaramin_BsWebapi_Element.intf ] as 'a)
+    Yawaramin_BsWebapi_Element.Common.t (defined as
+      'a Yawaramin_BsWebapi_Common.t)
+
+  The incompatible parts:
+    Yawaramin_BsWebapi_EventTarget.intf (defined as [ `eventTarget ])
+    vs
+    'a (defined as [> `element | `eventTarget | `node ])
+  The first variant type does not allow tag(s) `element, `node v}
+
+The last section of the error is the really important bit. We can
+interpret it as saying, 'we have something that supports [EventTarget],
+but we need something that supports [Element], [EventTarget], and
+[Node].' The [|] in this case act a little like bit-or and indicate a
+{i sum} of all their component types.
