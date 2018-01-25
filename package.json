@@ -1,0 +1,22 @@
+{
+  "name": "@yawaramin/bs-webapi",
+  "version": "0.1.0",
+  "scripts": {
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w",
+    "docs": "ocamldoc -html -colorize-code -d docs -I node_modules/bs-platform/lib/ocaml -I lib/bs/src src/*.mli src/Yawaramin_BsWebapi.ml"
+  },
+  "keywords": [
+    "BuckleScript",
+    "OCaml",
+    "JavaScript",
+    "WebAPI",
+    "DOM"
+  ],
+  "author": "Yawar Amin",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^2.1.0"
+  }
+}

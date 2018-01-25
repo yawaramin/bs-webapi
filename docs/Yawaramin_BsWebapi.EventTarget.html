@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Yawaramin_BsWebapi.Common.html">
+<link rel="next" href="Yawaramin_BsWebapi.Node.html">
+<link rel="Up" href="Yawaramin_BsWebapi.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Yawaramin_BsWebapi_Common" rel="Chapter" href="Yawaramin_BsWebapi_Common.html">
+<link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
+<link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
+<link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.EventTarget</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.Common.html" title="Yawaramin_BsWebapi.Common">Previous</a>
+&nbsp;<a class="up" href="Yawaramin_BsWebapi.html" title="Yawaramin_BsWebapi">Up</a>
+&nbsp;<a class="post" href="Yawaramin_BsWebapi.Node.html" title="Yawaramin_BsWebapi.Node">Next</a>
+</div>
+<h1>Module <a href="type_Yawaramin_BsWebapi.EventTarget.html">Yawaramin_BsWebapi.EventTarget</a></h1>
+
+<pre><span class="keyword">module</span> EventTarget: <code class="type"><a href="Yawaramin_BsWebapi_EventTarget.html">Yawaramin_BsWebapi_EventTarget</a></code></pre><hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+
+
+<pre><span id="TYPEintf"><span class="keyword">type</span> <code class="type"></code>intf</span> = <code class="type">[ `eventTarget ]</code> </pre>
+
+
+<pre><span id="TYPEoptions"><span class="keyword">type</span> <code class="type"></code>options</span> = <code class="type">< capture : bool; once : bool; passive : bool > Js.t</code> </pre>
+
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">unit -> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEt">t</a></code></pre>
+<pre><span id="VALaddEventListener"><span class="keyword">val</span> addEventListener</span> : <code class="type">type_:string -><br>       listener:(unit -> unit) -><br>       ?options:<a href="Yawaramin_BsWebapi_EventTarget.html#TYPEoptions">options</a> -> unit</code></pre><div class="info ">
+<code class="code">addEventListener ~type_ ~listener ?options t</code> adds an event handler
+    <code class="code">listener</code>, of type <code class="code">type_</code>, with options <code class="code">options</code>, to the event
+    target <code class="code">t</code>.
+<p>
+
+    <code class="code">listener</code> must be a BuckleScript uncurried function, e.g.
+    <code class="code"><span class="keyword">fun</span> [@bs] () <span class="keywordsign">-&gt;</span> <span class="constructor">Js</span>.log <span class="string">"Hello, World!"</span></code>.<br>
+</div>
+</body></html>
