@@ -3,10 +3,11 @@
     See
     {{: https://developer.mozilla.org/en-US/docs/Web/API/Node} https://developer.mozilla.org/en-US/docs/Web/API/Node} *)
 
-type 'a t = 'a Yawaramin_BsWebapi_Common.t
+module Common = Yawaramin_BsWebapi_Common
+
 type intf = [Yawaramin_BsWebapi_EventTarget.intf | `node]
 
-external baseURI: [> intf] t -> string = "" [@@bs.get]
+external baseURI: [> intf] Common.t -> string = "" [@@bs.get]
 
 (** [cast t] downcasts an [EventTarget] to a [Node]. *)
-val cast: [< intf] t -> intf t option
+val cast: [< intf] Common.t -> intf Common.t option

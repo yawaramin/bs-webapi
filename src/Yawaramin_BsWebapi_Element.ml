@@ -1,6 +1,5 @@
 module Common = Yawaramin_BsWebapi_Common
 
-type 'a t = 'a Common.t
 type intf = [Yawaramin_BsWebapi_Node.intf | `element]
 
 external className: [> intf] Common.t -> string = "" [@@bs.get]

@@ -33,15 +33,13 @@ The most general base class from which all objects in a <code class="code"><span
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
-
-
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi_Element.Common.html">Common</a>: <code class="type"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></code></pre>
 <pre><span id="TYPEintf"><span class="keyword">type</span> <code class="type"></code>intf</span> = <code class="type">[ `element | `eventTarget | `node ]</code> </pre>
 
 
-<pre><span id="VALclassName"><span class="keyword">val</span> className</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -> string</code></pre>
-<pre><span id="VALsetClassName"><span class="keyword">val</span> setClassName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -><br>       string -> unit</code></pre>
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> option</code></pre><div class="info ">
+<pre><span id="VALclassName"><span class="keyword">val</span> className</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] Common.t -> string</code></pre>
+<pre><span id="VALsetClassName"><span class="keyword">val</span> setClassName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] Common.t -> string -> unit</code></pre>
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] Common.t -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> Common.t option</code></pre><div class="info ">
 <code class="code">cast t</code> downcasts a supertype of <code class="code"><span class="constructor">Element</span></code> to <code class="code"><span class="constructor">Element</span></code>.<br>
 </div>
 </body></html>

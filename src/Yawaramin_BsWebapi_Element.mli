@@ -4,12 +4,13 @@
     See
     {{: https://developer.mozilla.org/en-US/docs/Web/API/Element} https://developer.mozilla.org/en-US/docs/Web/API/Element} *)
 
-type 'a t = 'a Yawaramin_BsWebapi_Common.t
+module Common = Yawaramin_BsWebapi_Common
+
 type intf = [Yawaramin_BsWebapi_Node.intf | `element]
 
-external className: [> intf] t -> string = "" [@@bs.get]
-external setClassName: [> intf] t -> string -> unit =
+external className: [> intf] Common.t -> string = "" [@@bs.get]
+external setClassName: [> intf] Common.t -> string -> unit =
   "className" [@@bs.set]
 
 (** [cast t] downcasts a supertype of [Element] to [Element]. *)
-val cast: [< intf] t -> intf t option
+val cast: [< intf] Common.t -> intf Common.t option

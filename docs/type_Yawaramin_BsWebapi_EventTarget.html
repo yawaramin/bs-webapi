@@ -13,18 +13,26 @@
 </head>
 <body>
 <code class="code"><span class="keyword">sig</span><br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Common</span>&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;intf&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>eventTarget&nbsp;]<br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;options&nbsp;=&nbsp;&lt;&nbsp;capture&nbsp;:&nbsp;bool;&nbsp;once&nbsp;:&nbsp;bool;&nbsp;passive&nbsp;:&nbsp;bool&nbsp;&gt;&nbsp;<span class="constructor">Js</span>.t<br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;make&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.intf&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;make&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.intf&nbsp;<span class="constructor">Common</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"EventTarget"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;addEventListener&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;type_:string&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;listener:[&nbsp;<span class="keywordsign">`</span>eventHandler&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.eventHandler<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventListener&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.eventListener&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;?options:[&nbsp;<span class="keywordsign">`</span>options&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.options<br>
+&nbsp;&nbsp;&nbsp;&nbsp;typ:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;listener:[&nbsp;<span class="keywordsign">`</span>eventHandler&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Common</span>.eventHandler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventListener&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Common</span>.eventListener&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?options:[&nbsp;<span class="keywordsign">`</span>options&nbsp;<span class="keyword">of</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&nbsp;capture&nbsp;:&nbsp;bool;&nbsp;once&nbsp;:&nbsp;bool;&nbsp;passive&nbsp;:&nbsp;bool&nbsp;&gt;&nbsp;<span class="constructor">Js</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>useCapture&nbsp;<span class="keyword">of</span>&nbsp;bool&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;removeEventListener&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;typ:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;listener:[&nbsp;<span class="keywordsign">`</span>eventHandler&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Common</span>.eventHandler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventListener&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Common</span>.eventListener&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?options:[&nbsp;<span class="keywordsign">`</span>options&nbsp;<span class="keyword">of</span>&nbsp;&lt;&nbsp;capture&nbsp;:&nbsp;bool;&nbsp;passive&nbsp;:&nbsp;bool&nbsp;&gt;&nbsp;<span class="constructor">Js</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>useCapture&nbsp;<span class="keyword">of</span>&nbsp;bool&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;dispatchEvent&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Common</span>.event&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
 <span class="keyword">end</span></code></body></html>
