@@ -35,7 +35,7 @@
 
 
 <pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">unit -> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEt">t</a></code></pre>
-<pre><span id="VALaddEventListener"><span class="keyword">val</span> addEventListener</span> : <code class="type">type_:string -><br>       listener:(unit -> unit) -><br>       ?options:<a href="Yawaramin_BsWebapi_EventTarget.html#TYPEoptions">options</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALaddEventListener"><span class="keyword">val</span> addEventListener</span> : <code class="type">type_:string -><br>       listener:[ `eventHandler of 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventHandler">Yawaramin_BsWebapi_Common.eventHandler</a><br>                | `eventListener of 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventListener">Yawaramin_BsWebapi_Common.eventListener</a> ] -><br>       ?options:[ `options of <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEoptions">options</a><br>                | `useCapture of bool ] -><br>       unit</code></pre><div class="info ">
 <code class="code">addEventListener ~type_ ~listener ?options t</code> adds an event handler
     <code class="code">listener</code>, of type <code class="code">type_</code>, with options <code class="code">options</code>, to the event
     target <code class="code">t</code>.

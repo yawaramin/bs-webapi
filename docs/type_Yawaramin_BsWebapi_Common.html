@@ -12,4 +12,11 @@
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi_Common</title>
 </head>
 <body>
-<code class="code"><span class="keyword">sig</span>&nbsp;<span class="keyword">type</span>&nbsp;_&nbsp;t&nbsp;<span class="keyword">external</span>&nbsp;unsafeCoerce&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;=&nbsp;<span class="string">"%identity"</span>&nbsp;<span class="keyword">end</span></code></body></html>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;_&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;_&nbsp;event<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;eventHandler&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.event&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;eventListener&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&nbsp;handleEvent&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.eventHandler&nbsp;&gt;&nbsp;<span class="constructor">Js</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;unsafeCoerce&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;=&nbsp;<span class="string">"%identity"</span><br>
+<span class="keyword">end</span></code></body></html>

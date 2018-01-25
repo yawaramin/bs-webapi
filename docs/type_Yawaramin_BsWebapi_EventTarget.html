@@ -22,6 +22,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"EventTarget"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;addEventListener&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;type_:string&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;listener:(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;?options:<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.options&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;listener:[&nbsp;<span class="keywordsign">`</span>eventHandler&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.eventHandler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventListener&nbsp;<span class="keyword">of</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.eventListener&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?options:[&nbsp;<span class="keywordsign">`</span>options&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.options<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>useCapture&nbsp;<span class="keyword">of</span>&nbsp;bool&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
 <span class="keyword">end</span></code></body></html>

@@ -22,7 +22,8 @@
 <h1>Module <a href="type_Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></h1>
 
 <pre><span class="keyword">module</span> Yawaramin_BsWebapi_Common: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi_Common.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Common WebAPI types and operations.<br>
+Common WebAPI types and operations. Mostly the ones that are the
+    roots of their inheritance hierarchies.<br>
 </div>
 <hr width="100%">
 
@@ -50,6 +51,19 @@ A DOM object starting from <code class="code"><span class="constructor">EventTar
     conform, the cast function returns the downcast value wrapped in a
     <code class="code"><span class="constructor">Some</span></code>; if not, it returns a <code class="code"><span class="constructor">None</span></code>.<br>
 </div>
+
+
+<pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type">'_</code> event</span> </pre>
+
+
+<pre><span id="TYPEeventHandler"><span class="keyword">type</span> <code class="type">'a</code> eventHandler</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Common.html#TYPEevent">event</a> -> unit</code> </pre>
+<div class="info ">
+Must be a BuckleScript uncurried function, e.g.
+    <code class="code"><span class="keyword">fun</span> [@bs] evt <span class="keywordsign">-&gt;</span> <span class="constructor">Js</span>.log <span class="string">"Hello, World!"</span></code><br>
+</div>
+
+
+<pre><span id="TYPEeventListener"><span class="keyword">type</span> <code class="type">'a</code> eventListener</span> = <code class="type">< handleEvent : 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventHandler">eventHandler</a> > Js.t</code> </pre>
 
 
 <pre><span id="VALunsafeCoerce"><span class="keyword">val</span> unsafeCoerce</span> : <code class="type">'a -> 'b</code></pre><div class="info ">

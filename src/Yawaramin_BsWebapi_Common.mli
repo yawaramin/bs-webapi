@@ -1,4 +1,5 @@
-(** Common WebAPI types and operations. *)
+(** Common WebAPI types and operations. Mostly the ones that are the
+    roots of their inheritance hierarchies. *)
 
 (** A DOM object starting from [EventTarget] and extending to any of its
     subtypes.
@@ -20,6 +21,12 @@
     [Some]; if not, it returns a [None].
 *)
 type _ t
+type _ event
+
+(** Must be a BuckleScript uncurried function, e.g.
+    [fun \[\@bs\] evt -> Js.log "Hello, World!"] *)
+type 'a eventHandler = 'a event -> unit [@bs]
+type 'a eventListener = < handleEvent: 'a eventHandler > Js.t
 
 (** [unsafeCoerce a] unsafely casts a value [a] of any type to any other
     type. Throws away all type safety guarantees. Use with caution. *)

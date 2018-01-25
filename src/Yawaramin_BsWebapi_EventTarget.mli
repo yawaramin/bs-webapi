@@ -19,6 +19,10 @@ external make: unit -> intf t = "EventTarget" [@@bs.new]
 *)
 external addEventListener:
   type_:string ->
-  listener:(unit -> unit [@bs]) ->
-  ?options:options ->
-  unit = "" [@@bs.send.pipe: [> intf] t]
+  listener:([
+  | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
+  | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
+  ?options:([
+  | `options of options
+  | `useCapture of bool ] [@bs.unwrap]) ->
+  unit = "" [@@bs.send.pipe: [> intf] Yawaramin_BsWebapi_Common.t]
