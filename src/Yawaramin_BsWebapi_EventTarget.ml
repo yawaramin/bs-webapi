@@ -1,28 +1,33 @@
-module Common = Yawaramin_BsWebapi_Common
+(**)
 
 type intf = [`eventTarget]
+type 'a t = ([> intf] as 'a) Yawaramin_BsWebapi_Common.t
 
-external make: unit -> intf Common.t = "EventTarget" [@@bs.new]
+external make: unit -> intf Yawaramin_BsWebapi_Common.t =
+  "EventTarget" [@@bs.new]
 
 external addEventListener:
   typ:string ->
   listener:([
-  | `eventListener of 'a Common.eventListener
-  | `eventHandler of 'a Common.eventHandler] [@bs.unwrap]) ->
+  | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
+  | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
   ?options:([
   | `options of < capture: bool; once: bool; passive: bool > Js.t
   | `useCapture of bool ] [@bs.unwrap]) ->
-  unit = "" [@@bs.send.pipe: [> intf] Common.t]
+  unit =
+  "" [@@bs.send.pipe: 'a t]
 
 external removeEventListener:
   typ:string ->
   listener:([
-  | `eventListener of 'a Common.eventListener
-  | `eventHandler of 'a Common.eventHandler] [@bs.unwrap]) ->
+  | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
+  | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
   ?options:([
   | `options of < capture: bool; passive: bool > Js.t
   | `useCapture of bool ] [@bs.unwrap]) ->
-  unit = "" [@@bs.send.pipe: [> intf] Common.t]
+  unit =
+  "" [@@bs.send.pipe: 'a t]
   
 external dispatchEvent:
-  ([> intf] as 'a) Common.t -> 'a Common.event -> unit = "" [@@bs.send]
+  'a t -> 'a Yawaramin_BsWebapi_Common.event -> unit =
+  "" [@@bs.send]

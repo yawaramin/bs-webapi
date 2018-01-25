@@ -13,6 +13,25 @@
 </head>
 <body>
 <code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Type</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;element&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;text&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;processingInstruction&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;comment&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;document&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;documentType&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;documentFragment&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">DocumentPosition</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;disconnected&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;preceding&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;following&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;contains&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;containedBy&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;implementationSpecific&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;intf&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>eventTarget&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>node&nbsp;]<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]<br>
@@ -20,17 +39,20 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;childNodes&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;array&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;array&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;firstChild&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="constructor">Js</span>.nullable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;lastChild&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="constructor">Js</span>.nullable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nextSibling&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="constructor">Js</span>.nullable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nodeName&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
@@ -41,7 +63,69 @@
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setNodeValue&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"nodeValue"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;ownerDocument&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventTarget&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>node&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;parentNode&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="constructor">Js</span>.nullable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;parentElement&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="constructor">Js</span>.nullable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;previousSibling&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="constructor">Js</span>.nullable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;textContent&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setTextContent&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"textContent"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;appendChild&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cloneNode&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?deep:<span class="constructor">Js</span>.boolean&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;compareDocumentPosition&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;contains&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hasChildNodes&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;insertBefore&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;newNode:([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;referenceNode:[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Js</span>.null&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;isDefaultNamespace&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.boolean&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;isEqualNode&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;isSameNode&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;lookupPrefix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;lookupNamespaceURI&nbsp;:&nbsp;string&nbsp;<span class="constructor">Js</span>.null&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;normalize&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;removeChild&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;replaceChild&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;newChild:[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;oldChild:[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cast&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Node</span>.intf&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t&nbsp;option<br>

@@ -33,34 +33,13 @@ Interface implemented by objects that can receive events and may have
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi_EventTarget.Common.html">Common</a>: <code class="type"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></code></pre>
 <pre><span id="TYPEintf"><span class="keyword">type</span> <code class="type"></code>intf</span> = <code class="type">[ `eventTarget ]</code> </pre>
 
 
-<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">unit -> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> Common.t</code></pre>
-<pre><span id="VALaddEventListener"><span class="keyword">val</span> addEventListener</span> : <code class="type">typ:string -><br>       listener:[ `eventHandler of 'a Common.eventHandler<br>                | `eventListener of 'a Common.eventListener ] -><br>       ?options:[ `options of < capture : bool; once : bool; passive : bool > Js.t<br>                | `useCapture of bool ] -><br>       unit</code></pre><div class="info ">
-<b><code class="code">addEventListener ~typ ~listener ?options t</code></b>. Register an event
-    handler of a specific event type on the <code class="code"><span class="constructor">EventTarget</span></code>. See
-    <a href=" "> https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener</a>
-<p>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">[> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> ]</code> t</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
 
-    <code class="code">listener</code> must contain an event handler BuckleScript uncurried
-    function.<br>
-</div>
 
-<pre><span id="VALremoveEventListener"><span class="keyword">val</span> removeEventListener</span> : <code class="type">typ:string -><br>       listener:[ `eventHandler of 'a Common.eventHandler<br>                | `eventListener of 'a Common.eventListener ] -><br>       ?options:[ `options of < capture : bool; passive : bool > Js.t<br>                | `useCapture of bool ] -><br>       unit</code></pre><div class="info ">
-<b><code class="code">removeEventListener ~typ ~listener ?options t</code></b>. Removes an event
-    listener from the <code class="code"><span class="constructor">EventTarget</span></code>. See
-    <a href=" "> https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener</a>
-<p>
-
-    <code class="code">listener</code> must contain an event handler BuckleScript uncurried
-    function.<br>
-</div>
-
-<pre><span id="VALdispatchEvent"><span class="keyword">val</span> dispatchEvent</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> ] as 'a) Common.t -><br>       'a Common.event -> unit</code></pre><div class="info ">
-Dispatches an <code class="code"><span class="constructor">Event</span></code> at the specified <code class="code"><span class="constructor">EventTarget</span></code>, invoking the
-    affected <code class="code"><span class="constructor">EventListeners</span></code> in the appropriate order. See
-    <a href=" "> https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent</a><br>
-</div>
-</body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">unit -> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code></pre>
+<pre><span id="VALaddEventListener"><span class="keyword">val</span> addEventListener</span> : <code class="type">typ:string -><br>       listener:[ `eventHandler of 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventHandler">Yawaramin_BsWebapi_Common.eventHandler</a><br>                | `eventListener of 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventListener">Yawaramin_BsWebapi_Common.eventListener</a> ] -><br>       ?options:[ `options of < capture : bool; once : bool; passive : bool > Js.t<br>                | `useCapture of bool ] -><br>       unit</code></pre>
+<pre><span id="VALremoveEventListener"><span class="keyword">val</span> removeEventListener</span> : <code class="type">typ:string -><br>       listener:[ `eventHandler of 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventHandler">Yawaramin_BsWebapi_Common.eventHandler</a><br>                | `eventListener of 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventListener">Yawaramin_BsWebapi_Common.eventListener</a> ] -><br>       ?options:[ `options of < capture : bool; passive : bool > Js.t<br>                | `useCapture of bool ] -><br>       unit</code></pre>
+<pre><span id="VALdispatchEvent"><span class="keyword">val</span> dispatchEvent</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEintf">intf</a> ] as 'a)<br>       <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Common.html#TYPEevent">Yawaramin_BsWebapi_Common.event</a> -> unit</code></pre></body></html>
