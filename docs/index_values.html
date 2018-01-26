@@ -6,6 +6,7 @@
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Yawaramin_BsWebapi_Attr" rel="Chapter" href="Yawaramin_BsWebapi_Attr.html">
 <link title="Yawaramin_BsWebapi_Common" rel="Chapter" href="Yawaramin_BsWebapi_Common.html">
 <link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
 <link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
@@ -43,6 +44,8 @@
 <code class="code">cast t</code> downcasts a supertype of <code class="code"><span class="constructor">Element</span></code> to <code class="code"><span class="constructor">Element</span></code>.
 </div>
 </td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALcast">cast</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALchildNodes">childNodes</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Element.html#VALclassName">className</a> [<a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a>]</td>
@@ -116,6 +119,8 @@
 <tr><td align="left"><br>L</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALlastChild">lastChild</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALlocalName">localName</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALlookupNamespaceURI">lookupNamespaceURI</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td><div class="info">
 <code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).
@@ -127,6 +132,10 @@
 <tr><td><a href="Yawaramin_BsWebapi_EventTarget.html#VALmake">make</a> [<a href="Yawaramin_BsWebapi_EventTarget.html">Yawaramin_BsWebapi_EventTarget</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALname">name</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALnamespaceURI">namespaceURI</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALnextSibling">nextSibling</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALnodeName">nodeName</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
@@ -143,12 +152,16 @@ Possible return values are in <a href="Yawaramin_BsWebapi_Node.Type.html"><code 
 <tr><td align="left"><br>O</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALownerDocument">ownerDocument</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALownerElement">ownerElement</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>P</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALparentElement">parentElement</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALparentNode">parentNode</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.DocumentPosition.html#VALpreceding">preceding</a> [<a href="Yawaramin_BsWebapi_Node.DocumentPosition.html">Yawaramin_BsWebapi_Node.DocumentPosition</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALprefix">prefix</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALpreviousSibling">previousSibling</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
@@ -190,6 +203,9 @@ Possible return values are in <a href="Yawaramin_BsWebapi_Node.Type.html"><code 
     type.
 </div>
 </td></tr>
+<tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALvalue">value</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
 </table>
 </body>
 </html>

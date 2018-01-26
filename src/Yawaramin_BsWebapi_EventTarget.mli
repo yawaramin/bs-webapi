@@ -1,9 +1,9 @@
 (**)
 
-type intf = [`eventTarget]
-type 'a t = ([> intf] as 'a) Yawaramin_BsWebapi_Common.t
+type this = [`eventTarget]
+type 'a t = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
 
-external make: unit -> intf Yawaramin_BsWebapi_Common.t =
+external make: unit -> this Yawaramin_BsWebapi_Common.t =
   "EventTarget" [@@bs.new]
 
 (** [\[\@\@bs.send.pipe: 'a t\]] (last argument is an ['a EventTarget.t]

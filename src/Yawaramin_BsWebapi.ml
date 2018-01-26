@@ -16,6 +16,11 @@ module EventTarget = Yawaramin_BsWebapi_EventTarget
     {{: https://developer.mozilla.org/en-US/docs/Web/API/Node} https://developer.mozilla.org/en-US/docs/Web/API/Node} *)
 module Node = Yawaramin_BsWebapi_Node
 
+(** A DOM element's attribute as an object.
+
+    See {{: https://developer.mozilla.org/en-US/docs/Web/API/Attr} https://developer.mozilla.org/en-US/docs/Web/API/Attr} *)
+module Attr = Yawaramin_BsWebapi_Attr
+
 (** The most general base class from which all objects in a [Document]
     inherit.
 

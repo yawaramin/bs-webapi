@@ -4,11 +4,12 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Yawaramin_BsWebapi.Node.html">
+<link rel="previous" href="Yawaramin_BsWebapi.Attr.html">
 <link rel="Up" href="Yawaramin_BsWebapi.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Yawaramin_BsWebapi_Attr" rel="Chapter" href="Yawaramin_BsWebapi_Attr.html">
 <link title="Yawaramin_BsWebapi_Common" rel="Chapter" href="Yawaramin_BsWebapi_Common.html">
 <link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
 <link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
@@ -16,7 +17,7 @@
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.Element</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.Node.html" title="Yawaramin_BsWebapi.Node">Previous</a>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.Attr.html" title="Yawaramin_BsWebapi.Attr">Previous</a>
 &nbsp;<a class="up" href="Yawaramin_BsWebapi.html" title="Yawaramin_BsWebapi">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Yawaramin_BsWebapi.Element.html">Yawaramin_BsWebapi.Element</a></h1>
@@ -31,15 +32,15 @@ The most general base class from which all objects in a <code class="code"><span
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEintf"><span class="keyword">type</span> <code class="type"></code>intf</span> = <code class="type">[ `element | `eventTarget | `node ]</code> </pre>
+<pre><span id="TYPEthis"><span class="keyword">type</span> <code class="type"></code>this</span> = <code class="type">[ `element | `eventTarget | `node ]</code> </pre>
 
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ]</code> t</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ]</code> t</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
 
 
-<pre><span id="VALclassName"><span class="keyword">val</span> className</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -> string</code></pre>
-<pre><span id="VALsetClassName"><span class="keyword">val</span> setClassName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -><br>       string -> unit</code></pre>
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
+<pre><span id="VALclassName"><span class="keyword">val</span> className</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -> string</code></pre>
+<pre><span id="VALsetClassName"><span class="keyword">val</span> setClassName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> -><br>       string -> unit</code></pre>
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
 <code class="code">cast t</code> downcasts a supertype of <code class="code"><span class="constructor">Element</span></code> to <code class="code"><span class="constructor">Element</span></code>.<br>
 </div>
 </body></html>

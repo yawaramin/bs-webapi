@@ -17,8 +17,8 @@ module DocumentPosition = struct
   let implementationSpecific = 32
 end
 
-type intf = [Yawaramin_BsWebapi_EventTarget.intf | `node]
-type 'a t = ([> intf] as 'a) Yawaramin_BsWebapi_Common.t
+type this = [Yawaramin_BsWebapi_EventTarget.this | `node]
+type 'a t = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
 
 external baseURI: 'a t -> string = "" [@@bs.get]
 external childNodes: 'a t -> 'b t array = "" [@@bs.get]
@@ -30,7 +30,7 @@ external nodeType: 'a t -> int = "" [@@bs.get]
 external nodeValue: 'a t -> string = "" [@@bs.get]
 external setNodeValue: 'a t -> string -> unit = "nodeValue" [@@bs.set]
 external ownerDocument:
-  'a t -> [< intf | `document] Yawaramin_BsWebapi_Common.t Js.nullable =
+  'a t -> [< this | `document] Yawaramin_BsWebapi_Common.t Js.nullable =
   "" [@@bs.get]
 
 external parentNode: 'a t -> 'b t Js.nullable = "" [@@bs.get]
@@ -63,8 +63,11 @@ external removeChild: 'b t -> 'b t = "" [@@bs.send.pipe: 'a t]
 external replaceChild: newChild:'c t -> oldChild:'b t -> unit =
   "" [@@bs.send.pipe: 'a t]
 
-let cast t = t
-  |> Yawaramin_BsWebapi_Common.unsafeCoerce
-  |> baseURI
-  |> Yawaramin_BsWebapi_Common.unsafeCoerce
-  |> Js.Nullable.to_opt
+let cast t =
+  let module Common = Yawaramin_BsWebapi_Common in
+  let t: this Common.t = Common.unsafeCoerce t in
+
+  t |> baseURI
+    |> Yawaramin_BsWebapi_Common.unsafeCoerce
+    |> Js.Nullable.to_opt
+    |> Js.Option.map (fun [@bs] _ -> t)
