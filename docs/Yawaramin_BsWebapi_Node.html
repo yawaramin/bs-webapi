@@ -52,25 +52,58 @@ Possible return values are in <a href="Yawaramin_BsWebapi_Node.Type.html"><code 
 <pre><span id="VALpreviousSibling"><span class="keyword">val</span> previousSibling</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       [> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> Js.nullable</code></pre>
 <pre><span id="VALtextContent"><span class="keyword">val</span> textContent</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       string Js.nullable</code></pre>
 <pre><span id="VALsetTextContent"><span class="keyword">val</span> setTextContent</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> string -> unit</code></pre>
-<pre><span id="VALappendChild"><span class="keyword">val</span> appendChild</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre>
-<pre><span id="VALcloneNode"><span class="keyword">val</span> cloneNode</span> : <code class="type">?deep:Js.boolean -><br>       [> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre>
+<pre><span id="VALappendChild"><span class="keyword">val</span> appendChild</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
+<pre><span id="VALcloneNode"><span class="keyword">val</span> cloneNode</span> : <code class="type">?deep:Js.boolean -><br>       [> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi_Node.DocumentPosition.html">DocumentPosition</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi_Node.DocumentPosition.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="VALcompareDocumentPosition"><span class="keyword">val</span> compareDocumentPosition</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-Possible return values are in
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).
+<p>
+
+    Possible return values are in
     <a href="Yawaramin_BsWebapi_Node.DocumentPosition.html"><code class="code"><span class="constructor">Yawaramin_BsWebapi_Node</span>.<span class="constructor">DocumentPosition</span></code></a>.<br>
 </div>
 
-<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre>
+<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
 <pre><span id="VALhasChildNodes"><span class="keyword">val</span> hasChildNodes</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre>
-<pre><span id="VALinsertBefore"><span class="keyword">val</span> insertBefore</span> : <code class="type">newNode:([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       referenceNode:[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a><br>                     Js.null -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre>
-<pre><span id="VALisDefaultNamespace"><span class="keyword">val</span> isDefaultNamespace</span> : <code class="type">string -> Js.boolean</code></pre>
-<pre><span id="VALisEqualNode"><span class="keyword">val</span> isEqualNode</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre>
-<pre><span id="VALisSameNode"><span class="keyword">val</span> isSameNode</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre>
+<pre><span id="VALinsertBefore"><span class="keyword">val</span> insertBefore</span> : <code class="type">newNode:([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       referenceNode:[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a><br>                     Js.null -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
+<pre><span id="VALisDefaultNamespace"><span class="keyword">val</span> isDefaultNamespace</span> : <code class="type">string -> Js.boolean</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
+<pre><span id="VALisEqualNode"><span class="keyword">val</span> isEqualNode</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
+<pre><span id="VALisSameNode"><span class="keyword">val</span> isSameNode</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> Js.boolean</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
 <pre><span id="VALlookupPrefix"><span class="keyword">val</span> lookupPrefix</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       string Js.nullable</code></pre>
-<pre><span id="VALlookupNamespaceURI"><span class="keyword">val</span> lookupNamespaceURI</span> : <code class="type">string Js.null -> string Js.nullable</code></pre>
+<pre><span id="VALlookupNamespaceURI"><span class="keyword">val</span> lookupNamespaceURI</span> : <code class="type">string Js.null -> string Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
 <pre><span id="VALnormalize"><span class="keyword">val</span> normalize</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> unit</code></pre>
-<pre><span id="VALremoveChild"><span class="keyword">val</span> removeChild</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre>
-<pre><span id="VALreplaceChild"><span class="keyword">val</span> replaceChild</span> : <code class="type">newChild:[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       oldChild:[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALremoveChild"><span class="keyword">val</span> removeChild</span> : <code class="type">([> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       'a <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
+<pre><span id="VALreplaceChild"><span class="keyword">val</span> replaceChild</span> : <code class="type">newChild:[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -><br>       oldChild:[> <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Node.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is a <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Node</span>.t</code> value).<br>
+</div>
+
 <pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> ] <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> -><br>       <a href="Yawaramin_BsWebapi_Node.html#TYPEintf">intf</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
 <code class="code">cast t</code> downcasts an <code class="code"><span class="constructor">EventTarget</span></code> to a <code class="code"><span class="constructor">Node</span></code>.<br>
 </div>

@@ -58,7 +58,7 @@ A DOM object starting from <code class="code"><span class="constructor">EventTar
 
 <pre><span id="TYPEeventHandler"><span class="keyword">type</span> <code class="type">'a</code> eventHandler</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Common.html#TYPEevent">event</a> -> unit</code> </pre>
 <div class="info ">
-Must be a BuckleScript uncurried function, e.g.
+<code class="code">[@bs]</code> (BuckleScript uncurried function). E.g.,
     <code class="code"><span class="keyword">fun</span> [@bs] evt <span class="keywordsign">-&gt;</span> <span class="constructor">Js</span>.log <span class="string">"Hello, World!"</span></code><br>
 </div>
 

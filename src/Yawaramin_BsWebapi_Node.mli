@@ -35,7 +35,10 @@ external textContent: 'a t -> string Js.nullable = "" [@@bs.get]
 external setTextContent: 'a t -> string -> unit =
   "textContent" [@@bs.set]
 
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external appendChild: 'b t -> 'b t = "" [@@bs.send.pipe: 'a t]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external cloneNode: ?deep:Js.boolean -> 'a t = "" [@@bs.send.pipe: 'a t]
 
 module DocumentPosition: sig
@@ -47,26 +50,42 @@ module DocumentPosition: sig
   val implementationSpecific: int
 end
 
-(** Possible return values are in
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value).
+
+    Possible return values are in
     {!module:Yawaramin_BsWebapi_Node.DocumentPosition}. *)
 external compareDocumentPosition: 'b t -> int = "" [@@bs.send.pipe: 'a t]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external contains: 'b t -> Js.boolean = "" [@@bs.send.pipe: 'a t]
 external hasChildNodes: 'a t -> Js.boolean = "" [@@bs.send]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external insertBefore:
   newNode:'b t -> referenceNode:'c t Js.null -> 'b t =
   "" [@@bs.send.pipe: 'a t]
 
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external isDefaultNamespace: string -> Js.boolean =
   "" [@@bs.send.pipe: 'a t]
 
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external isEqualNode: 'a t -> Js.boolean = "" [@@bs.send.pipe: 'a t]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external isSameNode: 'a t -> Js.boolean = "" [@@bs.send.pipe: 'a t]
 external lookupPrefix: 'a t -> string Js.nullable = "" [@@bs.send]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external lookupNamespaceURI: string Js.null -> string Js.nullable =
   "" [@@bs.send.pipe: 'a t]
 
 external normalize: 'a t -> unit = "" [@@bs.send]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external removeChild: 'b t -> 'b t = "" [@@bs.send.pipe: 'a t]
+
+(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
 external replaceChild: newChild:'c t -> oldChild:'b t -> unit =
   "" [@@bs.send.pipe: 'a t]
 
