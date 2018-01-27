@@ -13,7 +13,7 @@ external ownerElement:
 
 let cast t =
   let module Common = Yawaramin_BsWebapi_Common in
-  let t: this Common.t = Common.unsafeCoerce t in
+  let t = Common.unsafeCoerce t in
 
   t |> localName
     |> Yawaramin_BsWebapi_Common.unsafeCoerce
