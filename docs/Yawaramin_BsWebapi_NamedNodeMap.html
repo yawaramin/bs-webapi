@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Yawaramin_BsWebapi_EventTarget.html">
+<link rel="next" href="Yawaramin_BsWebapi_Node.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Yawaramin_BsWebapi_Attr" rel="Chapter" href="Yawaramin_BsWebapi_Attr.html">
+<link title="Yawaramin_BsWebapi_Common" rel="Chapter" href="Yawaramin_BsWebapi_Common.html">
+<link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
+<link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
+<link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
+<link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi_NamedNodeMap</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi_EventTarget.html" title="Yawaramin_BsWebapi_EventTarget">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Yawaramin_BsWebapi_Node.html" title="Yawaramin_BsWebapi_Node">Next</a>
+</div>
+<h1>Module <a href="type_Yawaramin_BsWebapi_NamedNodeMap.html">Yawaramin_BsWebapi_NamedNodeMap</a></h1>
+
+<pre><span class="keyword">module</span> Yawaramin_BsWebapi_NamedNodeMap: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi_NamedNodeMap.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="TYPEattr"><span class="keyword">type</span> <code class="type"></code>attr</span> = <code class="type"><a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">Yawaramin_BsWebapi_Attr.this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+
+
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type">int -> <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
+    value).<br>
+</div>
+
+<pre><span id="VALgetNamedItem"><span class="keyword">val</span> getNamedItem</span> : <code class="type">string -> <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
+    value).<br>
+</div>
+
+<pre><span id="VALgetNamedItemNS"><span class="keyword">val</span> getNamedItemNS</span> : <code class="type">?namespace:string -><br>       localName:string -> <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
+    value).<br>
+</div>
+
+<pre><span id="VALsetNamedItem"><span class="keyword">val</span> setNamedItem</span> : <code class="type"><a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> -><br>       <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
+    value).<br>
+</div>
+
+<pre><span id="VALsetNamedItemNS"><span class="keyword">val</span> setNamedItemNS</span> : <code class="type"><a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> -><br>       <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a> Js.nullable</code></pre>
+<pre><span id="VALremoveNamedItem"><span class="keyword">val</span> removeNamedItem</span> : <code class="type">string -> <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a></code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
+    value).<br>
+</div>
+
+<pre><span id="VALremoveNamedItemNS"><span class="keyword">val</span> removeNamedItemNS</span> : <code class="type">?namespace:string -> localName:string -> <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEattr">attr</a></code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
+    value).<br>
+</div>
+</body></html>

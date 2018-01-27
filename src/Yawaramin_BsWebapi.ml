@@ -21,6 +21,10 @@ module Node = Yawaramin_BsWebapi_Node
     See {{: https://developer.mozilla.org/en-US/docs/Web/API/Attr} https://developer.mozilla.org/en-US/docs/Web/API/Attr} *)
 module Attr = Yawaramin_BsWebapi_Attr
 
+(** A collection of [Attr] objects. See
+    {{: https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap} https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap} *)
+module NamedNodeMap = Yawaramin_BsWebapi_NamedNodeMap
+
 (** The most general base class from which all objects in a [Document]
     inherit.
 
