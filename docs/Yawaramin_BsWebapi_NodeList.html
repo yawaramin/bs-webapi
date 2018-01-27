@@ -51,7 +51,17 @@
 <pre><span id="VALentries"><span class="keyword">val</span> entries</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       (int * [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a>)<br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEiterator">iterator</a></code></pre>
 <pre><span id="VALforEach"><span class="keyword">val</span> forEach</span> : <code class="type">callback:([< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a> -><br>                 int -> <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit) -><br>       ?thisArg:<a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
 <code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value). Also,
-    <code class="code">callback</code> must be a BuckleScript-uncurried function with <code class="code">[@bs]</code>.<br>
+    <code class="code">callback</code> must be a BuckleScript-uncurried function with <code class="code">[@bs]</code>.
+<p>
+
+    Careful with labelling the arguments. If you forget, the type error
+    message won't mention a missing label because it will assume the
+    unlabelled argument is the <code class="code">t</code> (last) parameter. Here's a correct
+    usage: <pre class="codepre"><code class="code"><span class="keyword">module</span>&nbsp;<span class="constructor">Web</span>&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi</span><br>
+<span class="keyword">let</span>&nbsp;test&nbsp;(elem:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Web</span>.<span class="constructor">Element</span>.supertype)&nbsp;=&nbsp;elem<br>
+&nbsp;&nbsp;|&gt;&nbsp;<span class="constructor">Web</span>.<span class="constructor">ParentNode</span>.querySelectorAll&nbsp;<span class="string">"p"</span><br>
+&nbsp;&nbsp;|&gt;&nbsp;<span class="constructor">Web</span>.<span class="constructor">NodeList</span>.forEach&nbsp;~callback:(<span class="keyword">fun</span>&nbsp;[@bs]&nbsp;node&nbsp;_&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.log&nbsp;node)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
 <pre><span id="VALkeys"><span class="keyword">val</span> keys</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> int <a href="Yawaramin_BsWebapi_NodeList.html#TYPEiterator">iterator</a></code></pre>
