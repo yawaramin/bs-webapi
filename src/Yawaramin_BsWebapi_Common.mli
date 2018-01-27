@@ -24,6 +24,7 @@ type namedNodeMap
     [Some]; if not, it returns a [None].
 *)
 type _ t
+type htmlCollection
 type _ event
 
 (** [\[\@bs\]] (BuckleScript uncurried function). E.g.,

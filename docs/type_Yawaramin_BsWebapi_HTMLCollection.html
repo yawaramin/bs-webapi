@@ -13,22 +13,20 @@
 <link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
 <link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
-<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi_NonDocumentTypeChildNode</title>
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi_HTMLCollection</title>
 </head>
 <body>
 <code class="code"><span class="keyword">sig</span><br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.t<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>characterData&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.htmlCollection<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;element&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.supertype<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;previousElementSibling&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>characterData&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_NonDocumentTypeChildNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;item&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_HTMLCollection</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_NonDocumentTypeChildNode</span>.element&nbsp;=&nbsp;<span class="string">""</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;nextElementSibling&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>characterData&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_NonDocumentTypeChildNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_HTMLCollection</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;length&nbsp;:&nbsp;<span class="constructor">Yawaramin_BsWebapi_HTMLCollection</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;namedItem&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_HTMLCollection</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_NonDocumentTypeChildNode</span>.element&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_HTMLCollection</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
 <span class="keyword">end</span></code></body></html>

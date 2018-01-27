@@ -31,6 +31,12 @@ module NamedNodeMap = Yawaramin_BsWebapi_NamedNodeMap
 module NonDocumentTypeChildNode =
   Yawaramin_BsWebapi_NonDocumentTypeChildNode
 
+(** Generic collection (array-like object similar to arguments) of
+    elements (in document order) and methods and properties for selecting
+    from the list. See
+    {{: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection} https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection} *)
+module HTMLCollection = Yawaramin_BsWebapi_HTMLCollection
+
 (** The most general base class from which all objects in a [Document]
     inherit.
 
