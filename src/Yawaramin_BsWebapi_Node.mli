@@ -32,10 +32,12 @@ external previousSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external textContent: 'a subtype -> string Js.nullable = "" [@@bs.get]
 external setTextContent: 'a subtype -> string -> unit = "textContent" [@@bs.set]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external appendChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external cloneNode: ?deep:Js.boolean -> 'a supertype = "" [@@bs.send.pipe: 'a subtype]
 
 module DocumentPosition: sig
@@ -47,37 +49,46 @@ module DocumentPosition: sig
   val implementationSpecific: int
 end
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value).
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value).
 
     Possible return values are in
     {!module:Yawaramin_BsWebapi_Node.DocumentPosition}. *)
 external compareDocumentPosition: 'b subtype -> int = "" [@@bs.send.pipe: 'a subtype]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external contains: 'b subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
 external hasChildNodes: 'a subtype -> Js.boolean = "" [@@bs.send]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external insertBefore: newNode:'b subtype -> referenceNode:'c subtype Js.null -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external isDefaultNamespace: string -> Js.boolean = "" [@@bs.send.pipe: 'a subtype] 
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external isEqualNode: 'a subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external isSameNode: 'a subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
 external lookupPrefix: 'a subtype -> string Js.nullable = "" [@@bs.send]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external lookupNamespaceURI: string Js.null -> string Js.nullable = "" [@@bs.send.pipe: 'a subtype]
 external normalize: 'a subtype -> unit = "" [@@bs.send]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external removeChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is a ['a Node.t] value). *)
+(** [\[\@\@bs.send.pipe: 'a subtype\]] (last argument is an ['a subtype]
+    value). *)
 external replaceChild: newChild:'c subtype -> oldChild:'b subtype -> unit = "" [@@bs.send.pipe: 'a subtype]
 
 (** [cast t] downcasts an [EventTarget] to a [Node]. *)

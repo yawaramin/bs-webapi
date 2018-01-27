@@ -28,6 +28,4 @@ external removeEventListener:
   unit =
   "" [@@bs.send.pipe: 'a t]
   
-external dispatchEvent:
-  'a t -> 'a Yawaramin_BsWebapi_Common.event -> unit =
-  "" [@@bs.send]
+external dispatchEvent: 'a t -> 'a Yawaramin_BsWebapi_Common.event -> unit = "" [@@bs.send]
