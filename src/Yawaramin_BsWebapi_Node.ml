@@ -18,50 +18,38 @@ module DocumentPosition = struct
 end
 
 type this = [Yawaramin_BsWebapi_EventTarget.this | `node]
-type 'a t = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
+type 'a subtype = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
+type 'a supertype = ([< this] as 'a) Yawaramin_BsWebapi_Common.t
 
-external baseURI: 'a t -> string = "" [@@bs.get]
-external childNodes: 'a t -> 'b t array = "" [@@bs.get]
-external firstChild: 'a t -> 'b t Js.nullable = "" [@@bs.get]
-external lastChild: 'a t -> 'b t Js.nullable = "" [@@bs.get]
-external nextSibling: 'a t -> 'b t Js.nullable = "" [@@bs.get]
-external nodeName: 'a t -> string = "" [@@bs.get]
-external nodeType: 'a t -> int = "" [@@bs.get]
-external nodeValue: 'a t -> string = "" [@@bs.get]
-external setNodeValue: 'a t -> string -> unit = "nodeValue" [@@bs.set]
-external ownerDocument:
-  'a t -> [< this | `document] Yawaramin_BsWebapi_Common.t Js.nullable =
-  "" [@@bs.get]
-
-external parentNode: 'a t -> 'b t Js.nullable = "" [@@bs.get]
-external parentElement: 'a t -> 'b t Js.nullable = "" [@@bs.get]
-external previousSibling: 'a t -> 'b t Js.nullable = "" [@@bs.get]
-external textContent: 'a t -> string Js.nullable = "" [@@bs.get]
-external setTextContent: 'a t -> string -> unit =
-  "textContent" [@@bs.set]
-
-external appendChild: 'b t -> 'b t = "" [@@bs.send.pipe: 'a t]
-external cloneNode: ?deep:Js.boolean -> 'a t = "" [@@bs.send.pipe: 'a t]
-external compareDocumentPosition: 'b t -> int = "" [@@bs.send.pipe: 'a t]
-external contains: 'b t -> Js.boolean = "" [@@bs.send.pipe: 'a t]
-external hasChildNodes: 'a t -> Js.boolean = "" [@@bs.send]
-external insertBefore:
-  newNode:'b t -> referenceNode:'c t Js.null -> 'b t =
-  "" [@@bs.send.pipe: 'a t]
-
-external isDefaultNamespace: string -> Js.boolean =
-  "" [@@bs.send.pipe: 'a t]
-
-external isEqualNode: 'a t -> Js.boolean = "" [@@bs.send.pipe: 'a t]
-external isSameNode: 'a t -> Js.boolean = "" [@@bs.send.pipe: 'a t]
-external lookupPrefix: 'a t -> string Js.nullable = "" [@@bs.send]
-external lookupNamespaceURI: string Js.null -> string Js.nullable =
-  "" [@@bs.send.pipe: 'a t]
-
-external normalize: 'a t -> unit = "" [@@bs.send]
-external removeChild: 'b t -> 'b t = "" [@@bs.send.pipe: 'a t]
-external replaceChild: newChild:'c t -> oldChild:'b t -> unit =
-  "" [@@bs.send.pipe: 'a t]
+external baseURI: 'a subtype -> string = "" [@@bs.get]
+external childNodes: 'a subtype -> 'b supertype array = "" [@@bs.get]
+external firstChild: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
+external lastChild: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
+external nextSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
+external nodeName: 'a subtype -> string = "" [@@bs.get]
+external nodeType: 'a subtype -> int = "" [@@bs.get]
+external nodeValue: 'a subtype -> string = "" [@@bs.get]
+external setNodeValue: 'a subtype -> string -> unit = "nodeValue" [@@bs.set]
+external ownerDocument: 'a subtype -> [< this | `document] Yawaramin_BsWebapi_Common.t Js.nullable = "" [@@bs.get]
+external parentNode: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
+external parentElement: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
+external previousSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
+external textContent: 'a subtype -> string Js.nullable = "" [@@bs.get]
+external setTextContent: 'a subtype -> string -> unit = "textContent" [@@bs.set]
+external appendChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
+external cloneNode: ?deep:Js.boolean -> 'a supertype = "" [@@bs.send.pipe: 'a subtype]
+external compareDocumentPosition: 'b subtype -> int = "" [@@bs.send.pipe: 'a subtype]
+external contains: 'b subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
+external hasChildNodes: 'a subtype -> Js.boolean = "" [@@bs.send]
+external insertBefore: newNode:'b subtype -> referenceNode:'c subtype Js.null -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
+external isDefaultNamespace: string -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
+external isEqualNode: 'a subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
+external isSameNode: 'a subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
+external lookupPrefix: 'a subtype -> string Js.nullable = "" [@@bs.send]
+external lookupNamespaceURI: string Js.null -> string Js.nullable = "" [@@bs.send.pipe: 'a subtype]
+external normalize: 'a subtype -> unit = "" [@@bs.send]
+external removeChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
+external replaceChild: newChild:'c subtype -> oldChild:'b subtype -> unit = "" [@@bs.send.pipe: 'a subtype]
 
 let cast t =
   let module Common = Yawaramin_BsWebapi_Common in
