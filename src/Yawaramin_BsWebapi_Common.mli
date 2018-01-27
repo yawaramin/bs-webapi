@@ -9,7 +9,7 @@ type namedNodeMap
 
     The type parameter is a phantom type (a 'tag') that represents the
     exact subtype of [EventTarget] that you're dealing with. E.g., if you
-    have a [\[< Element.intf\] t], that means you have something that
+    have a [\[< this\] supertype], that means you have something that
     implements the [Element] (and by extension [Node] and [EventTarget])
     interfaces.
 
@@ -25,6 +25,8 @@ type namedNodeMap
 *)
 type _ t
 type htmlCollection
+type nodeList
+type _ iterator
 type _ event
 
 (** [\[\@bs\]] (BuckleScript uncurried function). E.g.,

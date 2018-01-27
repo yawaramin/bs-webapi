@@ -16,7 +16,12 @@
 <link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
 <link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
-<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.NamedNodeMap</title>
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi_Iterator</title>
 </head>
 <body>
-<code class="code">(<span class="keyword">module</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_NamedNodeMap</span>)</code></body></html>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Common</span>.iterator<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;next&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Iterator</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;&nbsp;_done&nbsp;:&nbsp;<span class="constructor">Js</span>.boolean;&nbsp;value&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Js</span>.nullable&nbsp;&gt;&nbsp;<span class="constructor">Js</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+<span class="keyword">end</span></code></body></html>

@@ -14,9 +14,12 @@
 <link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
 <link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
 <link title="Yawaramin_BsWebapi_HTMLCollection" rel="Chapter" href="Yawaramin_BsWebapi_HTMLCollection.html">
+<link title="Yawaramin_BsWebapi_Iterator" rel="Chapter" href="Yawaramin_BsWebapi_Iterator.html">
 <link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
 <link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.Common</title>
 </head>
 <body>
@@ -44,7 +47,7 @@ A DOM object starting from <code class="code"><span class="constructor">EventTar
 
     The type parameter is a phantom type (a 'tag') that represents the
     exact subtype of <code class="code"><span class="constructor">EventTarget</span></code> that you're dealing with. E.g., if you
-    have a <code class="code">[&lt; <span class="constructor">Element</span>.intf] t</code>, that means you have something that
+    have a <code class="code">[&lt; this] supertype</code>, that means you have something that
     implements the <code class="code"><span class="constructor">Element</span></code> (and by extension <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">EventTarget</span></code>)
     interfaces.
 <p>
@@ -63,6 +66,12 @@ A DOM object starting from <code class="code"><span class="constructor">EventTar
 
 
 <pre><span id="TYPEhtmlCollection"><span class="keyword">type</span> <code class="type"></code>htmlCollection</span> </pre>
+
+
+<pre><span id="TYPEnodeList"><span class="keyword">type</span> <code class="type"></code>nodeList</span> </pre>
+
+
+<pre><span id="TYPEiterator"><span class="keyword">type</span> <code class="type">'_</code> iterator</span> </pre>
 
 
 <pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type">'_</code> event</span> </pre>

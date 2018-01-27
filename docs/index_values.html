@@ -11,9 +11,12 @@
 <link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
 <link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
 <link title="Yawaramin_BsWebapi_HTMLCollection" rel="Chapter" href="Yawaramin_BsWebapi_HTMLCollection.html">
+<link title="Yawaramin_BsWebapi_Iterator" rel="Chapter" href="Yawaramin_BsWebapi_Iterator.html">
 <link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
 <link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Index of values</title>
 </head>
 <body>
@@ -52,7 +55,11 @@
 </td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALcast">cast</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
 <td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_ParentNode.html#VALchildElementCount">childElementCount</a> [<a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a>]</td>
+<td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALchildNodes">childNodes</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_ParentNode.html#VALchildren">children</a> [<a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Element.html#VALclassList">classList</a> [<a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a>]</td>
 <td></td></tr>
@@ -104,11 +111,20 @@
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.Type.html#VALelement">element</a> [<a href="Yawaramin_BsWebapi_Node.Type.html">Yawaramin_BsWebapi_Node.Type</a>]</td>
 <td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_NodeList.html#VALentries">entries</a> [<a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>F</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALfirstChild">firstChild</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
 <td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_ParentNode.html#VALfirstElementChild">firstElementChild</a> [<a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a>]</td>
+<td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.DocumentPosition.html#VALfollowing">following</a> [<a href="Yawaramin_BsWebapi_Node.DocumentPosition.html">Yawaramin_BsWebapi_Node.DocumentPosition</a>]</td>
 <td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_NodeList.html#VALforEach">forEach</a> [<a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a>]</td>
+<td><div class="info">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).
+</div>
+</td></tr>
 <tr><td align="left"><br>G</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Element.html#VALgetAttribute">getAttribute</a> [<a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a>]</td>
 <td><div class="info">
@@ -200,6 +216,11 @@
     value).
 </div>
 </td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_NodeList.html#VALitem">item</a> [<a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a>]</td>
+<td><div class="info">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).
+</div>
+</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_NamedNodeMap.html#VALitem">item</a> [<a href="Yawaramin_BsWebapi_NamedNodeMap.html">Yawaramin_BsWebapi_NamedNodeMap</a>]</td>
 <td><div class="info">
 <code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code"><span class="constructor">NamedNodeMap</span>.t</code>
@@ -207,9 +228,19 @@
 </div>
 </td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_HTMLCollection.html#VALitem">item</a> [<a href="Yawaramin_BsWebapi_HTMLCollection.html">Yawaramin_BsWebapi_HTMLCollection</a>]</td>
+<td><div class="info">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).
+</div>
+</td></tr>
+<tr><td align="left"><br>K</td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_NodeList.html#VALkeys">keys</a> [<a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>L</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.html#VALlastChild">lastChild</a> [<a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_ParentNode.html#VALlastElementChild">lastElementChild</a> [<a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_NodeList.html#VALlength">length</a> [<a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_NamedNodeMap.html#VALlength">length</a> [<a href="Yawaramin_BsWebapi_NamedNodeMap.html">Yawaramin_BsWebapi_NamedNodeMap</a>]</td>
 <td></td></tr>
@@ -234,10 +265,15 @@
 <tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALname">name</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_HTMLCollection.html#VALnamedItem">namedItem</a> [<a href="Yawaramin_BsWebapi_HTMLCollection.html">Yawaramin_BsWebapi_HTMLCollection</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).
+</div>
+</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Element.html#VALnamespaceURI">namespaceURI</a> [<a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALnamespaceURI">namespaceURI</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_Iterator.html#VALnext">next</a> [<a href="Yawaramin_BsWebapi_Iterator.html">Yawaramin_BsWebapi_Iterator</a>]</td>
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html#VALnextElementSibling">nextElementSibling</a> [<a href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">Yawaramin_BsWebapi_NonDocumentTypeChildNode</a>]</td>
 <td></td></tr>
@@ -276,6 +312,17 @@ Possible return values are in <a href="Yawaramin_BsWebapi_Node.Type.html"><code 
 <td></td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Node.Type.html#VALprocessingInstruction">processingInstruction</a> [<a href="Yawaramin_BsWebapi_Node.Type.html">Yawaramin_BsWebapi_Node.Type</a>]</td>
 <td></td></tr>
+<tr><td align="left"><br>Q</td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_ParentNode.html#VALquerySelector">querySelector</a> [<a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a>]</td>
+<td><div class="info">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is an <code class="code"><span class="keywordsign">'</span>a t</code> value).
+</div>
+</td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_ParentNode.html#VALquerySelectorAll">querySelectorAll</a> [<a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a>]</td>
+<td><div class="info">
+<code class="code">[@@bs.send.pipe: <span class="keywordsign">'</span>a t]</code> (last argument is an <code class="code"><span class="keywordsign">'</span>a t</code> value).
+</div>
+</td></tr>
 <tr><td align="left"><br>R</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Element.html#VALremoveAttribute">removeAttribute</a> [<a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a>]</td>
 <td><div class="info">
@@ -378,6 +425,8 @@ Possible return values are in <a href="Yawaramin_BsWebapi_Node.Type.html"><code 
 </td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Yawaramin_BsWebapi_Attr.html#VALvalue">value</a> [<a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Yawaramin_BsWebapi_NodeList.html#VALvalues">values</a> [<a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a>]</td>
 <td></td></tr>
 </table>
 </body>

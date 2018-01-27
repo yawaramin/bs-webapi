@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link rel="previous" href="Yawaramin_BsWebapi_ParentNode.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -14,13 +14,16 @@
 <link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
 <link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
 <link title="Yawaramin_BsWebapi_HTMLCollection" rel="Chapter" href="Yawaramin_BsWebapi_HTMLCollection.html">
+<link title="Yawaramin_BsWebapi_Iterator" rel="Chapter" href="Yawaramin_BsWebapi_Iterator.html">
 <link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
 <link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html" title="Yawaramin_BsWebapi_NonDocumentTypeChildNode">Previous</a>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi_ParentNode.html" title="Yawaramin_BsWebapi_ParentNode">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Yawaramin_BsWebapi.html">Yawaramin_BsWebapi</a></h1>
@@ -60,6 +63,21 @@ Methods that are particular to <code class="code"><span class="constructor">Node
 Generic collection (array-like object similar to arguments) of
     elements (in document order) and methods and properties for selecting
     from the list.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Iterator.html">Iterator</a>: <code class="type"><a href="Yawaramin_BsWebapi_Iterator.html">Yawaramin_BsWebapi_Iterator</a></code></pre><div class="info">
+Standard way to produce a sequence of values (either finite or
+    infinite).
+</div>
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.NodeList.html">NodeList</a>: <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a></code></pre><div class="info">
+Collections of nodes such as those returned by properties such as
+    <code class="code"><span class="constructor">Node</span>.childNodes</code> and the <code class="code">document.querySelectorAll()</code> method.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.ParentNode.html">ParentNode</a>: <code class="type"><a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a></code></pre><div class="info">
+Methods and properties that are common to all types of Node objects
+    that can have children.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Element.html">Element</a>: <code class="type"><a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a></code></pre><div class="info">

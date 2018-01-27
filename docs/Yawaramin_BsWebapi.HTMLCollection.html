@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html">
-<link rel="next" href="Yawaramin_BsWebapi.Element.html">
+<link rel="next" href="Yawaramin_BsWebapi.Iterator.html">
 <link rel="Up" href="Yawaramin_BsWebapi.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -15,15 +15,18 @@
 <link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
 <link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
 <link title="Yawaramin_BsWebapi_HTMLCollection" rel="Chapter" href="Yawaramin_BsWebapi_HTMLCollection.html">
+<link title="Yawaramin_BsWebapi_Iterator" rel="Chapter" href="Yawaramin_BsWebapi_Iterator.html">
 <link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
 <link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.HTMLCollection</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html" title="Yawaramin_BsWebapi.NonDocumentTypeChildNode">Previous</a>
 &nbsp;<a class="up" href="Yawaramin_BsWebapi.html" title="Yawaramin_BsWebapi">Up</a>
-&nbsp;<a class="post" href="Yawaramin_BsWebapi.Element.html" title="Yawaramin_BsWebapi.Element">Next</a>
+&nbsp;<a class="post" href="Yawaramin_BsWebapi.Iterator.html" title="Yawaramin_BsWebapi.Iterator">Next</a>
 </div>
 <h1>Module <a href="type_Yawaramin_BsWebapi.HTMLCollection.html">Yawaramin_BsWebapi.HTMLCollection</a></h1>
 
@@ -41,6 +44,12 @@ Generic collection (array-like object similar to arguments) of
 <pre><span id="TYPEelement"><span class="keyword">type</span> <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ]</code> element</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ] as 'a)<br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">Yawaramin_BsWebapi_Element.supertype</a></code> </pre>
 
 
-<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type"><a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ]<br>       <a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEelement">element</a> Js.nullable</code></pre>
+<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type">int -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ]<br>       <a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEelement">element</a> Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).<br>
+</div>
+
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALnamedItem"><span class="keyword">val</span> namedItem</span> : <code class="type"><a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ]<br>       <a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEelement">element</a> Js.nullable</code></pre></body></html>
+<pre><span id="VALnamedItem"><span class="keyword">val</span> namedItem</span> : <code class="type">string -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ]<br>       <a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEelement">element</a> Js.nullable</code></pre><div class="info ">
+<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).<br>
+</div>
+</body></html>
