@@ -25,6 +25,12 @@ module Attr = Yawaramin_BsWebapi_Attr
     {{: https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap} https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap} *)
 module NamedNodeMap = Yawaramin_BsWebapi_NamedNodeMap
 
+(** Methods that are particular to [Node] objects that can have a parent,
+    but not suitable for [DocumentType]. See
+    {{: https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode} https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode} *)
+module NonDocumentTypeChildNode =
+  Yawaramin_BsWebapi_NonDocumentTypeChildNode
+
 (** The most general base class from which all objects in a [Document]
     inherit.
 

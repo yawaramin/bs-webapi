@@ -1,4 +1,3 @@
 module Web = Yawaramin_BsWebapi
-
-let test namedNodeMap =
-  Web.NamedNodeMap.getNamedItemNS ~namespace:"ns" ~localName:"id" namedNodeMap
+let test (elem: 'a Web.Element.supertype) =
+  Yawaramin_BsWebapi_NonDocumentTypeChildNode.nextElementSibling elem

@@ -92,4 +92,4 @@ external removeChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtyp
 external replaceChild: newChild:'c subtype -> oldChild:'b subtype -> unit = "" [@@bs.send.pipe: 'a subtype]
 
 (** [cast t] downcasts an [EventTarget] to a [Node]. *)
-val cast: [< this] Yawaramin_BsWebapi_Common.t -> this Yawaramin_BsWebapi_Common.t option
+val cast: 'a supertype -> this Yawaramin_BsWebapi_Common.t option
