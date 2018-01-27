@@ -1,4 +1,4 @@
-type t
+type t = Yawaramin_BsWebapi_Common.namedNodeMap
 type attr = Yawaramin_BsWebapi_Attr.this Yawaramin_BsWebapi_Common.t
 
 external length: t -> int = "" [@@bs.get]

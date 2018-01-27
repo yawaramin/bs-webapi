@@ -1,3 +1,4 @@
+type namedNodeMap
 type _ t
 type _ event
 type 'a eventHandler = 'a event -> unit [@bs]

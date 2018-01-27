@@ -1,6 +1,9 @@
 (** Common WebAPI types and operations. Mostly the ones that are the
     roots of their inheritance hierarchies. *)
 
+(** See {!module:Yawaramin_BsWebapi_NamedNodeMap}. *)
+type namedNodeMap
+
 (** A DOM object starting from [EventTarget] and extending to any of its
     subtypes.
 
