@@ -45,12 +45,12 @@ hierarchy--so, <code class="code"><span class="constructor">Element</span></code
 <p>
 
 This means that you can, for example, directly add an event listener to
-any HTML element just by using the <code class="code"><span class="constructor">EventTarget</span>.addEventListener</code>
-function. You can also <i>downcast</i> a value to a subtype and then call
-the relevant functions with that. Downcasting is done safely (by checking
-if the value you provided supports a crucial property of the type you
-want) so you will always have to account for possible failure to
-downcast.
+any HTML element just by using the
+<a href="Yawaramin_BsWebapi_EventTarget.html#VALaddEventListener"><code class="code"><span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.addEventListener</code></a> function. You can
+also <i>downcast</i> a value to a subtype and then call the relevant
+functions with that. Downcasting is done safely (by checking if the value
+you provided supports a crucial property of the type you want) so you
+will always have to account for possible failure to downcast.
 <p>
 
 Hopefully, this type safety also translates to errors that are easier to
@@ -58,21 +58,21 @@ understand. For example:
 <p>
 
 <pre class="verbatim">We've found a bug for you!
-  /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 2:40-45
+  /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
 
-  1 | let test (target: Yawaramin_BsWebapi_EventTarget.intf Yawaramin_BsWebap
-      i_Common.t) =
-  2 |   Yawaramin_BsWebapi_Element.className target
+  2 |
+  3 | let test (target: Web.EventTarget.this Web.Common.t): int =
+  4 |   Web.Element.className target
 
   This has type:
-    Yawaramin_BsWebapi_EventTarget.intf Yawaramin_BsWebapi_Common.t
+    Web.EventTarget.this Web.Common.t (defined as
+      Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
   But somewhere wanted:
-    ([&gt; Yawaramin_BsWebapi_Element.intf ] as 'a)
-    Yawaramin_BsWebapi_Element.Common.t (defined as
+    ([&gt; Web.Element.this ] as 'a) Web.Element.t (defined as
       'a Yawaramin_BsWebapi_Common.t)
 
   The incompatible parts:
-    Yawaramin_BsWebapi_EventTarget.intf (defined as [ `eventTarget ])
+    Web.EventTarget.this (defined as [ `eventTarget ])
     vs
     'a (defined as [&gt; `element | `eventTarget | `node ])
   The first variant type does not allow tag(s) `element, `node</pre>
@@ -81,7 +81,7 @@ understand. For example:
 The last section of the error is the really important bit. We can
 interpret it as saying, 'we have something that supports <code class="code"><span class="constructor">EventTarget</span></code>,
 but we need something that supports <code class="code"><span class="constructor">Element</span></code>, <code class="code"><span class="constructor">EventTarget</span></code>, and
-<code class="code"><span class="constructor">Node</span></code>.' The <code class="code"><span class="keywordsign">|</span></code> in this case act a little like bit-or and indicate a
-<i>sum</i> of all their component types.<br>
+<code class="code"><span class="constructor">Node</span></code>.' The <code class="code"><span class="keywordsign">|</span></code> in this case act a little like bit-or and indicate the
+<i>intersection</i> of all their component types.<br>
 </body>
 </html>
