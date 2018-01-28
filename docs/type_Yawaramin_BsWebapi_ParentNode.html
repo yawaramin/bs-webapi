@@ -27,23 +27,29 @@
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;children&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>documentFragment&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_HTMLCollection</span>.t<br>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;firstElementChild&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>documentFragment&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;lastElementChild&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>documentFragment&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;childElementCount&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>documentFragment&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;querySelector&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>documentFragment&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;querySelectorAll&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_NodeList</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.element&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;querySelectorAll&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>document&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>documentFragment&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>element&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_ParentNode</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Yawaramin_BsWebapi_NodeList</span>.t&nbsp;=&nbsp;<span class="string">""</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
 <span class="keyword">end</span></code></body></html>

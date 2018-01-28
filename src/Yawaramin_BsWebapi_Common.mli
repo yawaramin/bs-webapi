@@ -29,8 +29,6 @@ type nodeList
 type _ iterator
 type _ event
 
-(** [\[\@bs\]] (BuckleScript uncurried function). E.g.,
-    [fun \[\@bs\] evt -> Js.log "Hello, World!"] *)
 type 'a eventHandler = 'a event -> unit [@bs]
 type 'a eventListener = < handleEvent: 'a eventHandler > Js.t
 

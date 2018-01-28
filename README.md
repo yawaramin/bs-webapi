@@ -24,3 +24,16 @@ See https://yawaramin.github.io/bs-webapi
 # Watch
 
     bsb -w
+
+## Build Docs
+
+You will need `ocamldoc`, and ideally `bs-platform` installed globally.
+Then:
+
+    npm run docs
+
+Will put the API documentation in the `docs` subdirectory.
+
+If you're not on a Mac or have `bs-platform` in a non-standard location,
+you'll need to adjust the path to `bsppx.exe` (which processes
+BuckleScript bindings so that the right types get sent to `ocamldoc`).

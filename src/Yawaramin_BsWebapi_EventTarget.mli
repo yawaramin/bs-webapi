@@ -3,11 +3,8 @@
 type this = [`eventTarget]
 type 'a t = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
 
-external make: unit -> this Yawaramin_BsWebapi_Common.t =
-  "EventTarget" [@@bs.new]
+external make: unit -> this Yawaramin_BsWebapi_Common.t = "EventTarget" [@@bs.new]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is an ['a EventTarget.t]
-    value). *)
 external addEventListener:
   typ:string ->
   listener:([

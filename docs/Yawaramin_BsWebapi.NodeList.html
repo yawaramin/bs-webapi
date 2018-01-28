@@ -46,18 +46,11 @@ Collections of nodes such as those returned by properties such as
 <pre><span id="TYPEiterator"><span class="keyword">type</span> <code class="type">'a</code> iterator</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Iterator.html#TYPEt">Yawaramin_BsWebapi_Iterator.t</a></code> </pre>
 
 
-<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type">int -><br>       [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a><br>       Js.nullable</code></pre><div class="info ">
-<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value).<br>
-</div>
-
+<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type">int -><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a><br>       Js.nullable</code></pre>
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> int</code></pre>
 <pre><span id="VALentries"><span class="keyword">val</span> entries</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       (int * [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a>)<br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEiterator">iterator</a></code></pre>
-<pre><span id="VALforEach"><span class="keyword">val</span> forEach</span> : <code class="type">callback:([< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a> -><br>                 int -> <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit) -><br>       ?thisArg:<a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-<code class="code">[@@bs.send.pipe: t]</code> (last argument is a <code class="code">t</code> value). Also,
-    <code class="code">callback</code> must be a BuckleScript-uncurried function with <code class="code">[@bs]</code>.
-<p>
-
-    Careful with labelling the arguments. If you forget, the type error
+<pre><span id="VALforEach"><span class="keyword">val</span> forEach</span> : <code class="type">callback:([< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a> -><br>                 int -> <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit<br>                [@bs]) -><br>       ?thisArg:<a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+Careful with labelling the arguments. If you forget, the type error
     message won't mention a missing label because it will assume the
     unlabelled argument is the <code class="code">t</code> (last) parameter. Here's a correct
     usage: <pre class="codepre"><code class="code"><span class="keyword">module</span>&nbsp;<span class="constructor">Web</span>&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi</span><br>

@@ -1,24 +1,18 @@
-(** The Web API. *)
+(** The entry point to the Web API. *)
 
 (** Definitions common to the entire Web API. *)
 module Common = Yawaramin_BsWebapi_Common
 
 (** Interface implemented by objects that can receive events and may have
-  listeners for them.
-
-  See
-  {{: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget} https://developer.mozilla.org/en-US/docs/Web/API/EventTarget} *)
+    listeners for them. See
+    {{: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget} https://developer.mozilla.org/en-US/docs/Web/API/EventTarget} *)
 module EventTarget = Yawaramin_BsWebapi_EventTarget
 
-(** Interface from which a number of DOM API object types inherit.
-
-    See
+(** Interface from which a number of DOM API object types inherit. See
     {{: https://developer.mozilla.org/en-US/docs/Web/API/Node} https://developer.mozilla.org/en-US/docs/Web/API/Node} *)
 module Node = Yawaramin_BsWebapi_Node
 
-(** A DOM element's attribute as an object.
-
-    See {{: https://developer.mozilla.org/en-US/docs/Web/API/Attr} https://developer.mozilla.org/en-US/docs/Web/API/Attr} *)
+(** A DOM element's attribute as an object. See {{: https://developer.mozilla.org/en-US/docs/Web/API/Attr} https://developer.mozilla.org/en-US/docs/Web/API/Attr} *)
 module Attr = Yawaramin_BsWebapi_Attr
 
 (** A collection of [Attr] objects. See

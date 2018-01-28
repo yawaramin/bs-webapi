@@ -77,11 +77,7 @@ A DOM object starting from <code class="code"><span class="constructor">EventTar
 <pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type">'_</code> event</span> </pre>
 
 
-<pre><span id="TYPEeventHandler"><span class="keyword">type</span> <code class="type">'a</code> eventHandler</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Common.html#TYPEevent">event</a> -> unit</code> </pre>
-<div class="info ">
-<code class="code">[@bs]</code> (BuckleScript uncurried function). E.g.,
-    <code class="code"><span class="keyword">fun</span> [@bs] evt <span class="keywordsign">-&gt;</span> <span class="constructor">Js</span>.log <span class="string">"Hello, World!"</span></code><br>
-</div>
+<pre><span id="TYPEeventHandler"><span class="keyword">type</span> <code class="type">'a</code> eventHandler</span> = <code class="type">('a <a href="Yawaramin_BsWebapi_Common.html#TYPEevent">event</a> -> unit [@bs])</code> </pre>
 
 
 <pre><span id="TYPEeventListener"><span class="keyword">type</span> <code class="type">'a</code> eventListener</span> = <code class="type">< handleEvent : 'a <a href="Yawaramin_BsWebapi_Common.html#TYPEeventHandler">eventHandler</a> > Js.t</code> </pre>
