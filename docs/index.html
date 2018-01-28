@@ -66,15 +66,15 @@ understand. For example:
 <pre class="verbatim">We've found a bug for you!
   /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
 
-  2 |
-  3 | let test (target: Web.EventTarget.this Web.Common.t): int =
-  4 |   Web.Element.className target
+  1 | module Web = Yawaramin_BsWebapi
+  2 | let test (target: Web.EventTarget.this Web.Common.t): int =
+  3 |   Web.Element.className target
 
   This has type:
     Web.EventTarget.this Web.Common.t (defined as
       Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
   But somewhere wanted:
-    ([&gt; Web.Element.this ] as 'a) Web.Element.t (defined as
+    ([&gt; Web.Element.this ] as 'a) Web.Element.subtype (defined as
       'a Yawaramin_BsWebapi_Common.t)
 
   The incompatible parts:
@@ -84,10 +84,9 @@ understand. For example:
   The first variant type does not allow tag(s) `element, `node</pre>
 <p>
 
-The last section of the error is the really important bit. We can
-interpret it as saying, 'we have something that supports <code class="code"><span class="constructor">EventTarget</span></code>,
-but we need something that supports <code class="code"><span class="constructor">Element</span></code>, <code class="code"><span class="constructor">EventTarget</span></code>, and
-<code class="code"><span class="constructor">Node</span></code>.' The <code class="code"><span class="keywordsign">|</span></code> in this case act a little like bit-or and indicate the
-<i>intersection</i> of all their component types.<br>
+We would read this as: 'this has type "EventTarget Common", but somewhere
+wanted "Element subtype" '. In other words, we have only an
+<code class="code"><span class="constructor">EventTarget</span></code>, but the operation we are trying to do requires an
+<code class="code"><span class="constructor">Element</span></code>.<br>
 </body>
 </html>

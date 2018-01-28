@@ -25,15 +25,15 @@ understand. For example:
 {v We've found a bug for you!
   /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
 
-  2 |
-  3 | let test (target: Web.EventTarget.this Web.Common.t): int =
-  4 |   Web.Element.className target
+  1 | module Web = Yawaramin_BsWebapi
+  2 | let test (target: Web.EventTarget.this Web.Common.t): int =
+  3 |   Web.Element.className target
 
   This has type:
     Web.EventTarget.this Web.Common.t (defined as
       Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
   But somewhere wanted:
-    ([> Web.Element.this ] as 'a) Web.Element.t (defined as
+    ([> Web.Element.this ] as 'a) Web.Element.subtype (defined as
       'a Yawaramin_BsWebapi_Common.t)
 
   The incompatible parts:
@@ -42,8 +42,7 @@ understand. For example:
     'a (defined as [> `element | `eventTarget | `node ])
   The first variant type does not allow tag(s) `element, `node v}
 
-The last section of the error is the really important bit. We can
-interpret it as saying, 'we have something that supports [EventTarget],
-but we need something that supports [Element], [EventTarget], and
-[Node].' The [|] in this case act a little like bit-or and indicate the
-{i intersection} of all their component types.
+We would read this as: 'this has type "EventTarget Common", but somewhere
+wanted "Element subtype" '. In other words, we have only an
+[EventTarget], but the operation we are trying to do requires an
+[Element].
