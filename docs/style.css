@@ -11,7 +11,8 @@
 .typetable { border-style : hidden }
 .paramstable { border-style : hidden ; padding: 5pt 5pt}
 div.sig_block {margin-left: 2em}
-*:target { background-color: #445f64; }
+*:target { border-left: 8px #B4B4B4 solid; }
+*:target::before { content: " "; }
 
 body {
   font-family: sans-serif;
