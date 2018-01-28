@@ -6,7 +6,7 @@
 .type { font-weight: bold; font-style: italic; }
 .string { color : #b5bd68; }
 .warning { color : #f5871f; font-weight : bold }
-.info { margin-left : 3em; margin-right: 3em }
+.info { padding-top: 4px; margin-left : 3em; margin-right: 3em }
 .param_info { margin-top: 4px; margin-left : 3em; margin-right : 3em }
 .typetable { border-style : hidden }
 .paramstable { border-style : hidden ; padding: 5pt 5pt}
@@ -15,7 +15,7 @@ div.sig_block {margin-left: 2em}
 *:target::before { content: " "; }
 
 body {
-  font-family: sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   font-size: 125%;
   text-align: left;
   padding: 5px;
@@ -56,5 +56,5 @@ ul.indexlist li { list-style-type: none ; margin-left: 0; padding-left: 0; }
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px black dotted;
+  border-bottom: 2px #B4B4B4 dotted;
 }
