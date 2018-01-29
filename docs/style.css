@@ -44,12 +44,23 @@ pre {
 }
 
 pre.verbatim, pre.codepre { }
-.indextable {border: 0;}
-.indextable td, .indextable th {border: 0; min-width: 80px}
-.indextable td.module { padding-left: 2px; padding-right: 2px}
-.indextable td.module a {color: 4E6272; text-decoration: none; display: block; width: 100%}
-.deprecated {color: #9768d1; font-style: italic}
-.indextable tr td div.info { margin-left: 2px; margin-right: 2px }
+.indextable {border: 0; background-color: #3A4152; width: 100%;}
+
+.indextable td, .indextable th {
+  border: 0;
+  padding-top: 4px;
+  min-width: 80px;
+  vertical-align: top
+}
+
+.indextable td.module {
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: right
+}
+
+.deprecated {color: #f5871f; font-style: italic}
+.indextable tr td div.info { margin-left: 2px; margin-right: 2px; padding: 0 }
 ul.indexlist { margin-left: 0; padding-left: 0;}
 ul.indexlist li { list-style-type: none ; margin-left: 0; padding-left: 0; }
 

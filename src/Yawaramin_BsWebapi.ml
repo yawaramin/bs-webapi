@@ -1,6 +1,7 @@
 (** The entry point to the Web API. *)
 
-(** Definitions common to the entire Web API. *)
+(** Common WebAPI types and operations. Mostly the ones that are the
+    roots of their inheritance hierarchies. *)
 module Common = Yawaramin_BsWebapi_Common
 
 (** Interface implemented by objects that can receive events and may have
@@ -33,7 +34,7 @@ module HTMLCollection = Yawaramin_BsWebapi_HTMLCollection
 
 (** Standard way to produce a sequence of values (either finite or
     infinite). See
-    {{: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol} standard way to produce a sequence of values (either finite or infinite).} *)
+    {{: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol} https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterator_protocol} *)
 module Iterator = Yawaramin_BsWebapi_Iterator
 
 (** Collections of nodes such as those returned by properties such as

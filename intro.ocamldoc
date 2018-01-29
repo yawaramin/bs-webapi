@@ -1,5 +1,21 @@
 {!indexlist}
-{!modules: Yawaramin_BsWebapi}
+
+{1 Contents}
+
+{!modules:
+  Yawaramin_BsWebapi
+  Yawaramin_BsWebapi.Common
+  Yawaramin_BsWebapi.EventTarget
+  Yawaramin_BsWebapi.Node
+  Yawaramin_BsWebapi.Attr
+  Yawaramin_BsWebapi.NamedNodeMap
+  Yawaramin_BsWebapi.NonDocumentTypeChildNode
+  Yawaramin_BsWebapi.HTMLCollection
+  Yawaramin_BsWebapi.Iterator
+  Yawaramin_BsWebapi.NodeList
+  Yawaramin_BsWebapi.ParentNode
+  Yawaramin_BsWebapi.Element
+}
 
 BuckleScript bindings to the
 {{: https://developer.mozilla.org/en-US/docs/Web/API} Web API}.

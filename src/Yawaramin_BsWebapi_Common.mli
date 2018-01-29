@@ -1,5 +1,4 @@
-(** Common WebAPI types and operations. Mostly the ones that are the
-    roots of their inheritance hierarchies. *)
+(**)
 
 (** See {!module:Yawaramin_BsWebapi_NamedNodeMap}. *)
 type namedNodeMap
