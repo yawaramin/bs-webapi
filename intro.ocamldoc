@@ -1,5 +1,10 @@
 {!indexlist}
 
+BuckleScript bindings to the
+{{:https://developer.mozilla.org/en-US/docs/Web/API}Web API}.
+
+{b Warning:} this is a work in progress. Don't use in production.
+
 {1 Contents}
 
 {!modules:
@@ -17,8 +22,7 @@
   Yawaramin_BsWebapi.Element
 }
 
-BuckleScript bindings to the
-{{: https://developer.mozilla.org/en-US/docs/Web/API} Web API}.
+{{:https://github.com/yawaramin/bs-webapi}GitHub}
 
 These bindings are organised into modules that correspond to the API
 class hierarchy. All modules in the hierarchy share a common
