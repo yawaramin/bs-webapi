@@ -12,17 +12,18 @@ external nextSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external nodeName: 'a subtype -> string = "" [@@bs.get]
 
 module Type: sig
-  val element: int
-  val text: int
-  val processingInstruction: int
-  val comment: int
-  val document: int
-  val documentType: int
-  val documentFragment: int
+  type t = int
+
+  val element: t
+  val text: t
+  val processingInstruction: t
+  val comment: t
+  val document: t
+  val documentType: t
+  val documentFragment: t
 end
 
-(** Possible return values are in {!module:Yawaramin_BsWebapi_Node.Type}. *)
-external nodeType: 'a subtype -> int = "" [@@bs.get]
+external nodeType: 'a subtype -> Type.t = "" [@@bs.get]
 external nodeValue: 'a subtype -> string = "" [@@bs.get]
 external setNodeValue: 'a subtype -> string -> unit = "nodeValue" [@@bs.set]
 external ownerDocument: 'a subtype -> [< this | `document] Yawaramin_BsWebapi_Common.t Js.nullable = "" [@@bs.get]
@@ -35,6 +36,8 @@ external appendChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtyp
 external cloneNode: ?deep:Js.boolean -> 'a supertype = "" [@@bs.send.pipe: 'a subtype]
 
 module DocumentPosition: sig
+  type t = int
+
   val disconnected: int
   val preceding: int
   val following: int
@@ -43,9 +46,7 @@ module DocumentPosition: sig
   val implementationSpecific: int
 end
 
-(** Possible return values are in
-    {!module:Yawaramin_BsWebapi_Node.DocumentPosition}. *)
-external compareDocumentPosition: 'b subtype -> int = "" [@@bs.send.pipe: 'a subtype]
+external compareDocumentPosition: 'b subtype -> DocumentPosition.t = "" [@@bs.send.pipe: 'a subtype]
 external contains: 'b subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
 external hasChildNodes: 'a subtype -> Js.boolean = "" [@@bs.send]
 external insertBefore: newNode:'b subtype -> referenceNode:'c subtype Js.null -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
