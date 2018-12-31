@@ -4,3 +4,4 @@
 lib
 node_modules
 *.bs.js
+.DS_Store

@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Yawaramin_BsWebapi.ParentNode.html">
+<link rel="previous" href="Yawaramin_BsWebapi.Common.html">
+<link rel="next" href="Yawaramin_BsWebapi.EventTarget.html">
 <link rel="Up" href="Yawaramin_BsWebapi.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -23,9 +24,10 @@
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.Element</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.ParentNode.html" title="Yawaramin_BsWebapi.ParentNode">Previous</a>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.Common.html" title="Yawaramin_BsWebapi.Common">Previous</a>
 &nbsp;<a class="up" href="Yawaramin_BsWebapi.html" title="Yawaramin_BsWebapi">Up</a>
-&nbsp;</div>
+&nbsp;<a class="post" href="Yawaramin_BsWebapi.EventTarget.html" title="Yawaramin_BsWebapi.EventTarget">Next</a>
+</div>
 <h1>Module <a href="type_Yawaramin_BsWebapi.Element.html">Yawaramin_BsWebapi.Element</a></h1>
 
 <pre><span class="keyword">module</span> Element: <code class="type"><a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a></code></pre><div class="info module top">
@@ -34,6 +36,9 @@ The most general base class from which all objects in a <code class="code"><span
     <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">https://developer.mozilla.org/en-US/docs/Web/API/Element</a><br>
 </div>
 <hr width="100%">
+
+<pre><span id="TYPEattr"><span class="keyword">type</span> <code class="type"></code>attr</span> = <code class="type"><a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">Yawaramin_BsWebapi_Attr.this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+
 
 <pre><span id="TYPEthis"><span class="keyword">type</span> <code class="type"></code>this</span> = <code class="type">[ `element | `eventTarget | `node ]</code> </pre>
 
@@ -44,44 +49,41 @@ The most general base class from which all objects in a <code class="code"><span
 <pre><span id="TYPEsupertype"><span class="keyword">type</span> <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ]</code> supertype</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
 
 
-<pre><span id="TYPEattr"><span class="keyword">type</span> <code class="type"></code>attr</span> = <code class="type"><a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">Yawaramin_BsWebapi_Attr.this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
-
-
 <pre><span id="VALattributes"><span class="keyword">val</span> attributes</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEt">Yawaramin_BsWebapi_NamedNodeMap.t</a></code></pre>
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
+<code class="code">cast t</code> downcasts a supertype of <code class="code"><span class="constructor">Element</span></code> to <code class="code"><span class="constructor">Element</span></code>.<br>
+</div>
+
 <pre><span id="VALclassList"><span class="keyword">val</span> classList</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string array</code></pre>
 <pre><span id="VALclassName"><span class="keyword">val</span> className</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string</code></pre>
-<pre><span id="VALsetClassName"><span class="keyword">val</span> setClassName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string -> unit</code></pre>
 <pre><span id="VALclientHeight"><span class="keyword">val</span> clientHeight</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
 <pre><span id="VALclientLeft"><span class="keyword">val</span> clientLeft</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
 <pre><span id="VALclientTop"><span class="keyword">val</span> clientTop</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
 <pre><span id="VALclientWidth"><span class="keyword">val</span> clientWidth</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
 <pre><span id="VALgetAttribute"><span class="keyword">val</span> getAttribute</span> : <code class="type">string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
-<pre><span id="VALgetAttributeNS"><span class="keyword">val</span> getAttributeNS</span> : <code class="type">?namespace:string -><br>       localName:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
 <pre><span id="VALgetAttributeNames"><span class="keyword">val</span> getAttributeNames</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string array</code></pre>
+<pre><span id="VALgetAttributeNS"><span class="keyword">val</span> getAttributeNS</span> : <code class="type">?namespace:string -><br>       localName:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
 <pre><span id="VALgetElementsByClassName"><span class="keyword">val</span> getElementsByClassName</span> : <code class="type">string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a><br>       array</code></pre>
 <pre><span id="VALgetElementsByTagName"><span class="keyword">val</span> getElementsByTagName</span> : <code class="type">string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a><br>       array</code></pre>
 <pre><span id="VALgetElementsByTagNameNS"><span class="keyword">val</span> getElementsByTagNameNS</span> : <code class="type">?namespace:string -><br>       localName:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a><br>       array</code></pre>
 <pre><span id="VALhasAttribute"><span class="keyword">val</span> hasAttribute</span> : <code class="type">string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       bool</code></pre>
 <pre><span id="VALhasAttributeNS"><span class="keyword">val</span> hasAttributeNS</span> : <code class="type">?namespace:string -><br>       localName:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
 <pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string</code></pre>
-<pre><span id="VALsetId"><span class="keyword">val</span> setId</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string -> unit</code></pre>
 <pre><span id="VALinnerHTML"><span class="keyword">val</span> innerHTML</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string</code></pre>
-<pre><span id="VALsetInnerHTML"><span class="keyword">val</span> setInnerHTML</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string -> unit</code></pre>
 <pre><span id="VALlocalName"><span class="keyword">val</span> localName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string</code></pre>
 <pre><span id="VALnamespaceURI"><span class="keyword">val</span> namespaceURI</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
 <pre><span id="VALprefix"><span class="keyword">val</span> prefix</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
 <pre><span id="VALremoveAttribute"><span class="keyword">val</span> removeAttribute</span> : <code class="type">string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
 <pre><span id="VALremoveAttributeNS"><span class="keyword">val</span> removeAttributeNS</span> : <code class="type">?namespace:string -><br>       localName:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
-<pre><span id="VALsetAttribute"><span class="keyword">val</span> setAttribute</span> : <code class="type">qualifiedName:string -><br>       value:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
-<pre><span id="VALsetAttributeNS"><span class="keyword">val</span> setAttributeNS</span> : <code class="type">?namespace:string -><br>       qualifiedName:string -><br>       value:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
 <pre><span id="VALscrollHeight"><span class="keyword">val</span> scrollHeight</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
 <pre><span id="VALscrollLeft"><span class="keyword">val</span> scrollLeft</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
-<pre><span id="VALsetScrollLeft"><span class="keyword">val</span> setScrollLeft</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int -> unit</code></pre>
 <pre><span id="VALscrollTop"><span class="keyword">val</span> scrollTop</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
-<pre><span id="VALsetScrollTop"><span class="keyword">val</span> setScrollTop</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int -> unit</code></pre>
 <pre><span id="VALscrollWidth"><span class="keyword">val</span> scrollWidth</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int</code></pre>
-<pre><span id="VALtagName"><span class="keyword">val</span> tagName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string</code></pre>
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
-<code class="code">cast t</code> downcasts a supertype of <code class="code"><span class="constructor">Element</span></code> to <code class="code"><span class="constructor">Element</span></code>.<br>
-</div>
-</body></html>
+<pre><span id="VALsetAttribute"><span class="keyword">val</span> setAttribute</span> : <code class="type">qualifiedName:string -><br>       value:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
+<pre><span id="VALsetAttributeNS"><span class="keyword">val</span> setAttributeNS</span> : <code class="type">?namespace:string -><br>       qualifiedName:string -><br>       value:string -><br>       [> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       unit</code></pre>
+<pre><span id="VALsetClassName"><span class="keyword">val</span> setClassName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string -> unit</code></pre>
+<pre><span id="VALsetId"><span class="keyword">val</span> setId</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string -> unit</code></pre>
+<pre><span id="VALsetInnerHTML"><span class="keyword">val</span> setInnerHTML</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string -> unit</code></pre>
+<pre><span id="VALsetScrollLeft"><span class="keyword">val</span> setScrollLeft</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int -> unit</code></pre>
+<pre><span id="VALsetScrollTop"><span class="keyword">val</span> setScrollTop</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       int -> unit</code></pre>
+<pre><span id="VALtagName"><span class="keyword">val</span> tagName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       string</code></pre></body></html>

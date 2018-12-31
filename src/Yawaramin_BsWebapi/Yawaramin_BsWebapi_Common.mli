@@ -1,7 +1,12 @@
 (**)
 
+type _ event
+type htmlCollection
+type _ iterator
+
 (** See {!module:Yawaramin_BsWebapi_NamedNodeMap}. *)
 type namedNodeMap
+type nodeList
 
 (** A DOM object starting from [EventTarget] and extending to any of its
     subtypes.
@@ -22,11 +27,6 @@ type namedNodeMap
     conform, the cast function returns the downcast value wrapped in a
     [Some]; if not, it returns a [None]. *)
 type _ t
-type htmlCollection
-type nodeList
-type _ iterator
-type _ event
-
 type 'a eventHandler = 'a event -> unit [@bs]
 type 'a eventListener = < handleEvent: 'a eventHandler > Js.t
 

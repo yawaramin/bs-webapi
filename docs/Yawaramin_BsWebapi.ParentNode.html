@@ -4,8 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Yawaramin_BsWebapi.NodeList.html">
-<link rel="next" href="Yawaramin_BsWebapi.Element.html">
+<link rel="previous" href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html">
 <link rel="Up" href="Yawaramin_BsWebapi.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -24,10 +23,9 @@
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.ParentNode</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.NodeList.html" title="Yawaramin_BsWebapi.NodeList">Previous</a>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html" title="Yawaramin_BsWebapi.NonDocumentTypeChildNode">Previous</a>
 &nbsp;<a class="up" href="Yawaramin_BsWebapi.html" title="Yawaramin_BsWebapi">Up</a>
-&nbsp;<a class="post" href="Yawaramin_BsWebapi.Element.html" title="Yawaramin_BsWebapi.Element">Next</a>
-</div>
+&nbsp;</div>
 <h1>Module <a href="type_Yawaramin_BsWebapi.ParentNode.html">Yawaramin_BsWebapi.ParentNode</a></h1>
 
 <pre><span class="keyword">module</span> ParentNode: <code class="type"><a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a></code></pre><div class="info module top">
@@ -37,15 +35,15 @@ Methods and properties that are common to all types of Node objects
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">[< `document | `documentFragment | `element ]</code> t</span> = <code class="type">([< `document | `documentFragment | `element ] as 'a)<br>       <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
-
-
 <pre><span id="TYPEelement"><span class="keyword">type</span> <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ]</code> element</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ] as 'a)<br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">Yawaramin_BsWebapi_Element.supertype</a></code> </pre>
 
 
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">[< `document | `documentFragment | `element ]</code> t</span> = <code class="type">([< `document | `documentFragment | `element ] as 'a)<br>       <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+
+
+<pre><span id="VALchildElementCount"><span class="keyword">val</span> childElementCount</span> : <code class="type">[< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       int</code></pre>
 <pre><span id="VALchildren"><span class="keyword">val</span> children</span> : <code class="type">[< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       <a href="Yawaramin_BsWebapi_HTMLCollection.html#TYPEt">Yawaramin_BsWebapi_HTMLCollection.t</a></code></pre>
 <pre><span id="VALfirstElementChild"><span class="keyword">val</span> firstElementChild</span> : <code class="type">[< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEelement">element</a><br>       Js.nullable</code></pre>
 <pre><span id="VALlastElementChild"><span class="keyword">val</span> lastElementChild</span> : <code class="type">[< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEelement">element</a><br>       Js.nullable</code></pre>
-<pre><span id="VALchildElementCount"><span class="keyword">val</span> childElementCount</span> : <code class="type">[< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       int</code></pre>
 <pre><span id="VALquerySelector"><span class="keyword">val</span> querySelector</span> : <code class="type">string -><br>       [< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">Yawaramin_BsWebapi_Element.this</a> ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEelement">element</a><br>       Js.nullable</code></pre>
 <pre><span id="VALquerySelectorAll"><span class="keyword">val</span> querySelectorAll</span> : <code class="type">string -><br>       [< `document | `documentFragment | `element ] <a href="Yawaramin_BsWebapi_ParentNode.html#TYPEt">t</a> -><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">Yawaramin_BsWebapi_NodeList.t</a></code></pre></body></html>

@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Yawaramin_BsWebapi.Iterator.html">
-<link rel="next" href="Yawaramin_BsWebapi.ParentNode.html">
+<link rel="previous" href="Yawaramin_BsWebapi.Node.html">
+<link rel="next" href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html">
 <link rel="Up" href="Yawaramin_BsWebapi.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
@@ -24,9 +24,9 @@
 <link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi.NodeList</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.Iterator.html" title="Yawaramin_BsWebapi.Iterator">Previous</a>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi.Node.html" title="Yawaramin_BsWebapi.Node">Previous</a>
 &nbsp;<a class="up" href="Yawaramin_BsWebapi.html" title="Yawaramin_BsWebapi">Up</a>
-&nbsp;<a class="post" href="Yawaramin_BsWebapi.ParentNode.html" title="Yawaramin_BsWebapi.ParentNode">Next</a>
+&nbsp;<a class="post" href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html" title="Yawaramin_BsWebapi.NonDocumentTypeChildNode">Next</a>
 </div>
 <h1>Module <a href="type_Yawaramin_BsWebapi.NodeList.html">Yawaramin_BsWebapi.NodeList</a></h1>
 
@@ -37,17 +37,15 @@ Collections of nodes such as those returned by properties such as
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Yawaramin_BsWebapi_Common.html#TYPEnodeList">Yawaramin_BsWebapi_Common.nodeList</a></code> </pre>
+<pre><span id="TYPEiterator"><span class="keyword">type</span> <code class="type">'a</code> iterator</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Iterator.html#TYPEt">Yawaramin_BsWebapi_Iterator.t</a></code> </pre>
 
 
 <pre><span id="TYPEnode"><span class="keyword">type</span> <code class="type">[< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ]</code> node</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Node.html#TYPEsupertype">Yawaramin_BsWebapi_Node.supertype</a></code> </pre>
 
 
-<pre><span id="TYPEiterator"><span class="keyword">type</span> <code class="type">'a</code> iterator</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Iterator.html#TYPEt">Yawaramin_BsWebapi_Iterator.t</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Yawaramin_BsWebapi_Common.html#TYPEnodeList">Yawaramin_BsWebapi_Common.nodeList</a></code> </pre>
 
 
-<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type">int -><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a><br>       Js.nullable</code></pre>
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> int</code></pre>
 <pre><span id="VALentries"><span class="keyword">val</span> entries</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       (int * [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a>)<br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEiterator">iterator</a></code></pre>
 <pre><span id="VALforEach"><span class="keyword">val</span> forEach</span> : <code class="type">callback:([< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a> -><br>                 int -> <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit<br>                [@bs]) -><br>       ?thisArg:<a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
 Careful with labelling the arguments. If you forget, the type error
@@ -60,5 +58,7 @@ Careful with labelling the arguments. If you forget, the type error
 &nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
+<pre><span id="VALitem"><span class="keyword">val</span> item</span> : <code class="type">int -><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a><br>       Js.nullable</code></pre>
 <pre><span id="VALkeys"><span class="keyword">val</span> keys</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> int <a href="Yawaramin_BsWebapi_NodeList.html#TYPEiterator">iterator</a></code></pre>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -> int</code></pre>
 <pre><span id="VALvalues"><span class="keyword">val</span> values</span> : <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html#TYPEt">t</a> -><br>       [< <a href="Yawaramin_BsWebapi_Node.html#TYPEthis">Yawaramin_BsWebapi_Node.this</a> ] <a href="Yawaramin_BsWebapi_NodeList.html#TYPEnode">node</a><br>       <a href="Yawaramin_BsWebapi_NodeList.html#TYPEiterator">iterator</a></code></pre></body></html>
