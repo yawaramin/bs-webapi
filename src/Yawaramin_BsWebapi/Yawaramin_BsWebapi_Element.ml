@@ -17,7 +17,7 @@ external getAttributeNames: 'a subtype -> string array = "" [@@bs.send]
 external getElementsByClassName: string -> 'b supertype array = "" [@@bs.send.pipe: 'a subtype]
 external getElementsByTagName: string -> 'b supertype array = "" [@@bs.send.pipe: 'a subtype]
 external getElementsByTagNameNS: ?namespace:string -> localName:string -> 'b supertype array = "" [@@bs.send.pipe: 'a subtype]
-external hasAttribute: string -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
+external hasAttribute: string -> bool = "" [@@bs.send.pipe: 'a subtype]
 external hasAttributeNS: ?namespace:string -> localName:string -> unit = "" [@@bs.send.pipe: 'a subtype]
 external id: 'a subtype -> string = "" [@@bs.get]
 external setId: 'a subtype -> string -> unit = "id" [@@bs.set]
@@ -44,5 +44,5 @@ let cast t =
 
   t |> id
     |> Yawaramin_BsWebapi_Common.unsafeCoerce
-    |> Js.Nullable.to_opt
+    |> Js.Nullable.toOption
     |> Js.Option.map (fun [@bs] _ -> t)

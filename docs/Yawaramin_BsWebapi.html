@@ -29,7 +29,70 @@
 <h1>Module <a href="type_Yawaramin_BsWebapi.html">Yawaramin_BsWebapi</a></h1>
 
 <pre><span class="keyword">module</span> Yawaramin_BsWebapi: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-The entry point to the Web API.<br>
+<ul class="indexlist">
+<li><a href="index_types.html">Index of types</a></li>
+<li><a href="index_values.html">Index of values</a></li>
+<li><a href="index_modules.html">Index of modules</a></li>
+</ul>
+
+<p>
+
+    BuckleScript bindings to the
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
+<p>
+
+    <b>Warning:</b> this is a work in progress. Don't use in production.
+<p>
+
+    <a href="https://github.com/yawaramin/bs-webapi">GitHub</a>
+<p>
+
+    These bindings are organised into modules that correspond to the API
+    class hierarchy. All modules in the hierarchy share a common
+    <code class="code"><span class="constructor">EventTarget</span></code> modelled as an abstract type. If you have a value of,
+    say, an <code class="code"><span class="constructor">HTMLElement</span></code>, you will be able to manipulate it with the
+    relevant functions in all the modules which represent its supertypes
+    in the hierarchy--so, <code class="code"><span class="constructor">Element</span></code>, <code class="code"><span class="constructor">Node</span></code>, and <code class="code"><span class="constructor">EventTarget</span></code>.
+<p>
+
+    This means that you can, for example, directly add an event listener
+    to any HTML element just by using the
+    <a href="Yawaramin_BsWebapi_EventTarget.html#VALaddEventListener"><code class="code"><span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.addEventListener</code></a> function. You
+    can also <i>downcast</i> a value to a subtype and then call the relevant
+    functions with that. Downcasting is done safely (by checking if the
+    value you provided supports a crucial property of the type you want)
+    so you will always have to account for possible failure to downcast.
+<p>
+
+    Hopefully, this type safety also translates to errors that are easier
+    to understand. For example:
+<p>
+
+    <pre class="verbatim">We've found a bug for you!
+      /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
+
+      1 | module Web = Yawaramin_BsWebapi
+      2 | let test (target: Web.EventTarget.this Web.Common.t): int =
+      3 |   Web.Element.className target
+
+      This has type:
+        Web.EventTarget.this Web.Common.t (defined as
+          Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
+      But somewhere wanted:
+        ([&gt; Web.Element.this ] as 'a) Web.Element.subtype (defined as
+          'a Yawaramin_BsWebapi_Common.t)
+
+      The incompatible parts:
+        Web.EventTarget.this (defined as [ `eventTarget ])
+        vs
+        'a (defined as [&gt; `element | `eventTarget | `node ])
+      The first variant type does not allow tag(s) `element, `node</pre>
+<p>
+
+    We would read this as: 'this has type "EventTarget Common", but
+    somewhere wanted "Element subtype" '. In other words, we have only an
+    <code class="code"><span class="constructor">EventTarget</span></code>, but the operation we are trying to do requires an
+    <code class="code"><span class="constructor">Element</span></code>.<br>
 </div>
 <hr width="100%">
 

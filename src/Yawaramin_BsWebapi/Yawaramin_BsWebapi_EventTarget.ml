@@ -12,8 +12,8 @@ external addEventListener:
   | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
   | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
   ?options:([
-  | `options of < capture: Js.boolean; once: Js.boolean; passive: Js.boolean > Js.t
-  | `useCapture of Js.boolean ] [@bs.unwrap]) ->
+  | `options of < capture: bool; once: bool; passive: bool > Js.t
+  | `useCapture of bool ] [@bs.unwrap]) ->
   unit =
   "" [@@bs.send.pipe: 'a t]
 
@@ -23,8 +23,8 @@ external removeEventListener:
   | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
   | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
   ?options:([
-  | `options of < capture: Js.boolean; passive: Js.boolean > Js.t
-  | `useCapture of Js.boolean ] [@bs.unwrap]) ->
+  | `options of < capture: bool; passive: bool > Js.t
+  | `useCapture of bool ] [@bs.unwrap]) ->
   unit =
   "" [@@bs.send.pipe: 'a t]
   

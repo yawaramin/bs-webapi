@@ -41,14 +41,14 @@ external previousSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external textContent: 'a subtype -> string Js.nullable = "" [@@bs.get]
 external setTextContent: 'a subtype -> string -> unit = "textContent" [@@bs.set]
 external appendChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
-external cloneNode: ?deep:Js.boolean -> 'a supertype = "" [@@bs.send.pipe: 'a subtype]
+external cloneNode: ?deep:bool -> 'a supertype = "" [@@bs.send.pipe: 'a subtype]
 external compareDocumentPosition: 'b subtype -> DocumentPosition.t = "" [@@bs.send.pipe: 'a subtype]
-external contains: 'b subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
-external hasChildNodes: 'a subtype -> Js.boolean = "" [@@bs.send]
+external contains: 'b subtype -> bool = "" [@@bs.send.pipe: 'a subtype]
+external hasChildNodes: 'a subtype -> bool = "" [@@bs.send]
 external insertBefore: newNode:'b subtype -> referenceNode:'c subtype Js.null -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
-external isDefaultNamespace: string -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
-external isEqualNode: 'a subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
-external isSameNode: 'a subtype -> Js.boolean = "" [@@bs.send.pipe: 'a subtype]
+external isDefaultNamespace: string -> bool = "" [@@bs.send.pipe: 'a subtype]
+external isEqualNode: 'a subtype -> bool = "" [@@bs.send.pipe: 'a subtype]
+external isSameNode: 'a subtype -> bool = "" [@@bs.send.pipe: 'a subtype]
 external lookupPrefix: 'a subtype -> string Js.nullable = "" [@@bs.send]
 external lookupNamespaceURI: string Js.null -> string Js.nullable = "" [@@bs.send.pipe: 'a subtype]
 external normalize: 'a subtype -> unit = "" [@@bs.send]
@@ -61,5 +61,5 @@ let cast t =
 
   t |> baseURI
     |> Yawaramin_BsWebapi_Common.unsafeCoerce
-    |> Js.Nullable.to_opt
+    |> Js.Nullable.toOption
     |> Js.Option.map (fun [@bs] _ -> t)

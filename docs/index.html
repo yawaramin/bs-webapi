@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
+<link rel="previous" href="Yawaramin_BsWebapi_ParentNode.html">
+<link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
@@ -18,10 +20,15 @@
 <link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
 <link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
 <link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
-<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title></title>
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi.html"><title>Yawaramin_BsWebapi</title>
 </head>
 <body>
-<h1></h1>
+<div class="navbar"><a class="pre" href="Yawaramin_BsWebapi_ParentNode.html" title="Yawaramin_BsWebapi_ParentNode">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Yawaramin_BsWebapi.html">Yawaramin_BsWebapi</a></h1>
+
+<pre><span class="keyword">module</span> Yawaramin_BsWebapi: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 <ul class="indexlist">
 <li><a href="index_types.html">Index of types</a></li>
 <li><a href="index_values.html">Index of values</a></li>
@@ -30,126 +37,114 @@
 
 <p>
 
-BuckleScript bindings to the
-<a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
+    BuckleScript bindings to the
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
 <p>
 
-<b>Warning:</b> this is a work in progress. Don't use in production.
+    <b>Warning:</b> this is a work in progress. Don't use in production.
 <p>
 
-<h1 id="1_Contents">Contents</h1>
+    <a href="https://github.com/yawaramin/bs-webapi">GitHub</a>
 <p>
 
-<br>
-<table class="indextable">
-<tr><td class="module"><a href="Yawaramin_BsWebapi.html">Yawaramin_BsWebapi</a></td><td><div class="info">
-The entry point to the Web API.
+    These bindings are organised into modules that correspond to the API
+    class hierarchy. All modules in the hierarchy share a common
+    <code class="code"><span class="constructor">EventTarget</span></code> modelled as an abstract type. If you have a value of,
+    say, an <code class="code"><span class="constructor">HTMLElement</span></code>, you will be able to manipulate it with the
+    relevant functions in all the modules which represent its supertypes
+    in the hierarchy--so, <code class="code"><span class="constructor">Element</span></code>, <code class="code"><span class="constructor">Node</span></code>, and <code class="code"><span class="constructor">EventTarget</span></code>.
+<p>
+
+    This means that you can, for example, directly add an event listener
+    to any HTML element just by using the
+    <a href="Yawaramin_BsWebapi_EventTarget.html#VALaddEventListener"><code class="code"><span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.addEventListener</code></a> function. You
+    can also <i>downcast</i> a value to a subtype and then call the relevant
+    functions with that. Downcasting is done safely (by checking if the
+    value you provided supports a crucial property of the type you want)
+    so you will always have to account for possible failure to downcast.
+<p>
+
+    Hopefully, this type safety also translates to errors that are easier
+    to understand. For example:
+<p>
+
+    <pre class="verbatim">We've found a bug for you!
+      /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
+
+      1 | module Web = Yawaramin_BsWebapi
+      2 | let test (target: Web.EventTarget.this Web.Common.t): int =
+      3 |   Web.Element.className target
+
+      This has type:
+        Web.EventTarget.this Web.Common.t (defined as
+          Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
+      But somewhere wanted:
+        ([&gt; Web.Element.this ] as 'a) Web.Element.subtype (defined as
+          'a Yawaramin_BsWebapi_Common.t)
+
+      The incompatible parts:
+        Web.EventTarget.this (defined as [ `eventTarget ])
+        vs
+        'a (defined as [&gt; `element | `eventTarget | `node ])
+      The first variant type does not allow tag(s) `element, `node</pre>
+<p>
+
+    We would read this as: 'this has type "EventTarget Common", but
+    somewhere wanted "Element subtype" '. In other words, we have only an
+    <code class="code"><span class="constructor">EventTarget</span></code>, but the operation we are trying to do requires an
+    <code class="code"><span class="constructor">Element</span></code>.<br>
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.Common.html">Yawaramin_BsWebapi.Common</a></td><td><div class="info">
+<hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Common.html">Common</a>: <code class="type"><a href="Yawaramin_BsWebapi_Common.html">Yawaramin_BsWebapi_Common</a></code></pre><div class="info">
 Common WebAPI types and operations.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.EventTarget.html">Yawaramin_BsWebapi.EventTarget</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.EventTarget.html">EventTarget</a>: <code class="type"><a href="Yawaramin_BsWebapi_EventTarget.html">Yawaramin_BsWebapi_EventTarget</a></code></pre><div class="info">
 Interface implemented by objects that can receive events and may have
     listeners for them.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.Node.html">Yawaramin_BsWebapi.Node</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Node.html">Node</a>: <code class="type"><a href="Yawaramin_BsWebapi_Node.html">Yawaramin_BsWebapi_Node</a></code></pre><div class="info">
 Interface from which a number of DOM API object types inherit.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.Attr.html">Yawaramin_BsWebapi.Attr</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Attr.html">Attr</a>: <code class="type"><a href="Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a></code></pre><div class="info">
 A DOM element's attribute as an object.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.NamedNodeMap.html">Yawaramin_BsWebapi.NamedNodeMap</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.NamedNodeMap.html">NamedNodeMap</a>: <code class="type"><a href="Yawaramin_BsWebapi_NamedNodeMap.html">Yawaramin_BsWebapi_NamedNodeMap</a></code></pre><div class="info">
 A collection of <code class="code"><span class="constructor">Attr</span></code> objects.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html">Yawaramin_BsWebapi.NonDocumentTypeChildNode</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.NonDocumentTypeChildNode.html">NonDocumentTypeChildNode</a>: <code class="type"><a href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">Yawaramin_BsWebapi_NonDocumentTypeChildNode</a></code></pre><div class="info">
 Methods that are particular to <code class="code"><span class="constructor">Node</span></code> objects that can have a parent,
     but not suitable for <code class="code"><span class="constructor">DocumentType</span></code>.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.HTMLCollection.html">Yawaramin_BsWebapi.HTMLCollection</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.HTMLCollection.html">HTMLCollection</a>: <code class="type"><a href="Yawaramin_BsWebapi_HTMLCollection.html">Yawaramin_BsWebapi_HTMLCollection</a></code></pre><div class="info">
 Generic collection (array-like object similar to arguments) of
     elements (in document order) and methods and properties for selecting
     from the list.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.Iterator.html">Yawaramin_BsWebapi.Iterator</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Iterator.html">Iterator</a>: <code class="type"><a href="Yawaramin_BsWebapi_Iterator.html">Yawaramin_BsWebapi_Iterator</a></code></pre><div class="info">
 Standard way to produce a sequence of values (either finite or
     infinite).
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.NodeList.html">Yawaramin_BsWebapi.NodeList</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.NodeList.html">NodeList</a>: <code class="type"><a href="Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a></code></pre><div class="info">
 Collections of nodes such as those returned by properties such as
     <code class="code"><span class="constructor">Node</span>.childNodes</code> and the <code class="code">document.querySelectorAll()</code> method.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.ParentNode.html">Yawaramin_BsWebapi.ParentNode</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.ParentNode.html">ParentNode</a>: <code class="type"><a href="Yawaramin_BsWebapi_ParentNode.html">Yawaramin_BsWebapi_ParentNode</a></code></pre><div class="info">
 Methods and properties that are common to all types of Node objects
     that can have children.
 </div>
-</td></tr>
-<tr><td class="module"><a href="Yawaramin_BsWebapi.Element.html">Yawaramin_BsWebapi.Element</a></td><td><div class="info">
+
+<pre><span class="keyword">module</span> <a href="Yawaramin_BsWebapi.Element.html">Element</a>: <code class="type"><a href="Yawaramin_BsWebapi_Element.html">Yawaramin_BsWebapi_Element</a></code></pre><div class="info">
 The most general base class from which all objects in a <code class="code"><span class="constructor">Document</span></code>
     inherit.
 </div>
-</td></tr>
-</table>
-
-<p>
-
-<a href="https://github.com/yawaramin/bs-webapi">GitHub</a>
-<p>
-
-These bindings are organised into modules that correspond to the API
-class hierarchy. All modules in the hierarchy share a common
-<code class="code"><span class="constructor">EventTarget</span></code> modelled as an abstract type. If you have a value of, say,
-an <code class="code"><span class="constructor">HTMLElement</span></code>, you will be able to manipulate it with the relevant
-functions in all the modules which represent its supertypes in the
-hierarchy--so, <code class="code"><span class="constructor">Element</span></code>, <code class="code"><span class="constructor">Node</span></code>, and <code class="code"><span class="constructor">EventTarget</span></code>.
-<p>
-
-This means that you can, for example, directly add an event listener to
-any HTML element just by using the
-<a href="Yawaramin_BsWebapi_EventTarget.html#VALaddEventListener"><code class="code"><span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.addEventListener</code></a> function. You can
-also <i>downcast</i> a value to a subtype and then call the relevant
-functions with that. Downcasting is done safely (by checking if the value
-you provided supports a crucial property of the type you want) so you
-will always have to account for possible failure to downcast.
-<p>
-
-Hopefully, this type safety also translates to errors that are easier to
-understand. For example:
-<p>
-
-<pre class="verbatim">We've found a bug for you!
-  /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
-
-  1 | module Web = Yawaramin_BsWebapi
-  2 | let test (target: Web.EventTarget.this Web.Common.t): int =
-  3 |   Web.Element.className target
-
-  This has type:
-    Web.EventTarget.this Web.Common.t (defined as
-      Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
-  But somewhere wanted:
-    ([&gt; Web.Element.this ] as 'a) Web.Element.subtype (defined as
-      'a Yawaramin_BsWebapi_Common.t)
-
-  The incompatible parts:
-    Web.EventTarget.this (defined as [ `eventTarget ])
-    vs
-    'a (defined as [&gt; `element | `eventTarget | `node ])
-  The first variant type does not allow tag(s) `element, `node</pre>
-<p>
-
-We would read this as: 'this has type "EventTarget Common", but somewhere
-wanted "Element subtype" '. In other words, we have only an
-<code class="code"><span class="constructor">EventTarget</span></code>, but the operation we are trying to do requires an
-<code class="code"><span class="constructor">Element</span></code>.<br>
-</body>
-</html>
+</body></html>

@@ -15,5 +15,5 @@ let cast t =
 
   t |> localName
     |> Yawaramin_BsWebapi_Common.unsafeCoerce
-    |> Js.Nullable.to_opt
+    |> Js.Nullable.toOption
     |> Js.Option.map (fun [@bs] _ -> t)

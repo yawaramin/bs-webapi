@@ -20,8 +20,7 @@ type namedNodeMap
     which safely downcasts by testing the value for a crucial member
     property it must have to conform to the target type. If it does
     conform, the cast function returns the downcast value wrapped in a
-    [Some]; if not, it returns a [None].
-*)
+    [Some]; if not, it returns a [None]. *)
 type _ t
 type htmlCollection
 type nodeList
