@@ -19,16 +19,25 @@ See https://yawaramin.github.io/bs-webapi
 
 ## Build
 
-    bsb -make-world
+First, ensure you have `bs-platform` installed globally:
+
+    npm i -g bs-platform
+
+Then, link it into this project:
+
+    npm link bs-platform
+
+Then, build:
+
+    npm run build
 
 # Watch
 
-    bsb -w
+    npm run watch
 
 ## Build Docs
 
-You will need `ocamldoc`, and ideally `bs-platform` installed globally.
-Then:
+You will need `ocamldoc` installed globally. Then:
 
     npm run docs
 
