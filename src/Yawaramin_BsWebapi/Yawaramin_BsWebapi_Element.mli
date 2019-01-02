@@ -1,14 +1,15 @@
 (**)
 
-type attr = Yawaramin_BsWebapi_Attr.this Yawaramin_BsWebapi_Common.t
+type 'a t = 'a Yawaramin_BsWebapi_Common.t
+type attr = Yawaramin_BsWebapi_Attr.this t
 type this = [Yawaramin_BsWebapi_Node.this | `element]
-type 'a subtype = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
-type 'a supertype = ([< this] as 'a) Yawaramin_BsWebapi_Common.t
+type 'a subtype = ([> this] as 'a) t
+type 'a supertype = ([< this] as 'a) t
 
 external attributes: 'a subtype -> Yawaramin_BsWebapi_NamedNodeMap.t = "" [@@bs.get]
 
 (** [cast t] downcasts a supertype of [Element] to [Element]. *)
-val cast: 'a supertype -> this Yawaramin_BsWebapi_Common.t option
+val cast: 'a supertype -> this t option
 
 external classList: 'a subtype -> string array = "" [@@bs.get]
 external className: 'a subtype -> string = "" [@@bs.get]

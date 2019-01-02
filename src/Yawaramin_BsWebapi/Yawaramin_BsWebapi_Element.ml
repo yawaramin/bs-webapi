@@ -1,3 +1,4 @@
+type 'a t = 'a Yawaramin_BsWebapi_Common.t
 type this = [Yawaramin_BsWebapi_Node.this | `element]
 type 'a subtype = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
 type 'a supertype = ([< this] as 'a) Yawaramin_BsWebapi_Common.t
@@ -43,6 +44,6 @@ let cast t =
   let t = Common.unsafeCoerce t in
 
   t |> id
-    |> Yawaramin_BsWebapi_Common.unsafeCoerce
+    |> Common.unsafeCoerce
     |> Js.Nullable.toOption
     |> Js.Option.map (fun [@bs] _ -> t)

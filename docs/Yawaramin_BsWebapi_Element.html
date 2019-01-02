@@ -34,20 +34,23 @@
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEattr"><a href="#TYPEattr" class="keyword">type</a> <code class="type"></code>attr</span> = <code class="type"><a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">Yawaramin_BsWebapi_Attr.this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+<pre><span id="TYPEt"><a href="#TYPEt" class="keyword">type</a> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+
+
+<pre><span id="TYPEattr"><a href="#TYPEattr" class="keyword">type</a> <code class="type"></code>attr</span> = <code class="type"><a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">Yawaramin_BsWebapi_Attr.this</a> <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a></code> </pre>
 
 
 <pre><span id="TYPEthis"><a href="#TYPEthis" class="keyword">type</a> <code class="type"></code>this</span> = <code class="type">[ `element | `eventTarget | `node ]</code> </pre>
 
 
-<pre><span id="TYPEsubtype"><a href="#TYPEsubtype" class="keyword">type</a> <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ]</code> subtype</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+<pre><span id="TYPEsubtype"><a href="#TYPEsubtype" class="keyword">type</a> <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ]</code> subtype</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a></code> </pre>
 
 
-<pre><span id="TYPEsupertype"><a href="#TYPEsupertype" class="keyword">type</a> <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ]</code> supertype</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a></code> </pre>
+<pre><span id="TYPEsupertype"><a href="#TYPEsupertype" class="keyword">type</a> <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ]</code> supertype</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a></code> </pre>
 
 
 <pre><span id="VALattributes"><a href="#VALattributes" class="keyword">val</a> attributes</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsubtype">subtype</a> -><br>       <a href="Yawaramin_BsWebapi_NamedNodeMap.html#TYPEt">Yawaramin_BsWebapi_NamedNodeMap.t</a></code></pre>
-<pre><span id="VALcast"><a href="#VALcast" class="keyword">val</a> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> <a href="Yawaramin_BsWebapi_Common.html#TYPEt">Yawaramin_BsWebapi_Common.t</a> option</code></pre><div class="info ">
+<pre><span id="VALcast"><a href="#VALcast" class="keyword">val</a> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Element.html#TYPEsupertype">supertype</a> -><br>       <a href="Yawaramin_BsWebapi_Element.html#TYPEthis">this</a> <a href="Yawaramin_BsWebapi_Element.html#TYPEt">t</a> option</code></pre><div class="info ">
 <code class="code">cast t</code> downcasts a supertype of <code class="code"><span class="constructor">Element</span></code> to <code class="code"><span class="constructor">Element</span></code>.<br>
 </div>
 

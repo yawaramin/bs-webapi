@@ -23,15 +23,16 @@ module Type: sig
   val text: t
 end
 
+type 'a t = 'a Yawaramin_BsWebapi_Common.t
 type this = [Yawaramin_BsWebapi_EventTarget.this | `node]
-type 'a subtype = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
-type 'a supertype = ([< this] as 'a) Yawaramin_BsWebapi_Common.t
+type 'a subtype = ([> this] as 'a) t
+type 'a supertype = ([< this] as 'a) t
 
 external appendChild: 'b subtype -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
 external baseURI: 'a subtype -> string = "" [@@bs.get]
 
 (** [cast t] downcasts an [EventTarget] to a [Node]. *)
-val cast: 'a supertype -> this Yawaramin_BsWebapi_Common.t option
+val cast: 'a supertype -> this t option
 external childNodes: 'a subtype -> 'b supertype array = "" [@@bs.get]
 external cloneNode: ?deep:bool -> 'a supertype = "" [@@bs.send.pipe: 'a subtype]
 external compareDocumentPosition: 'b subtype -> DocumentPosition.t = "" [@@bs.send.pipe: 'a subtype]
@@ -50,7 +51,7 @@ external nodeName: 'a subtype -> string = "" [@@bs.get]
 external nodeType: 'a subtype -> Type.t = "" [@@bs.get]
 external nodeValue: 'a subtype -> string = "" [@@bs.get]
 external normalize: 'a subtype -> unit = "" [@@bs.send]
-external ownerDocument: 'a subtype -> [< this | `document] Yawaramin_BsWebapi_Common.t Js.nullable = "" [@@bs.get]
+external ownerDocument: 'a subtype -> [< this | `document] t Js.nullable = "" [@@bs.get]
 external parentElement: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external parentNode: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external previousSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]

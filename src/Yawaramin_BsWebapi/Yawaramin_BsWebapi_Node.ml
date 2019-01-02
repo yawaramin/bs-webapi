@@ -21,9 +21,10 @@ module DocumentPosition = struct
   let implementationSpecific = 32
 end
 
+type 'a t = 'a Yawaramin_BsWebapi_Common.t
 type this = [Yawaramin_BsWebapi_EventTarget.this | `node]
-type 'a subtype = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
-type 'a supertype = ([< this] as 'a) Yawaramin_BsWebapi_Common.t
+type 'a subtype = ([> this] as 'a) t
+type 'a supertype = ([< this] as 'a) t
 
 external baseURI: 'a subtype -> string = "" [@@bs.get]
 external childNodes: 'a subtype -> 'b supertype array = "" [@@bs.get]
@@ -34,7 +35,7 @@ external nodeName: 'a subtype -> string = "" [@@bs.get]
 external nodeType: 'a subtype -> Type.t = "" [@@bs.get]
 external nodeValue: 'a subtype -> string = "" [@@bs.get]
 external setNodeValue: 'a subtype -> string -> unit = "nodeValue" [@@bs.set]
-external ownerDocument: 'a subtype -> [< this | `document] Yawaramin_BsWebapi_Common.t Js.nullable = "" [@@bs.get]
+external ownerDocument: 'a subtype -> [< this | `document] t Js.nullable = "" [@@bs.get]
 external parentNode: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external parentElement: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external previousSibling: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
@@ -60,6 +61,6 @@ let cast t =
   let t = Common.unsafeCoerce t in
 
   t |> baseURI
-    |> Yawaramin_BsWebapi_Common.unsafeCoerce
+    |> Common.unsafeCoerce
     |> Js.Nullable.toOption
     |> Js.Option.map (fun [@bs] _ -> t)

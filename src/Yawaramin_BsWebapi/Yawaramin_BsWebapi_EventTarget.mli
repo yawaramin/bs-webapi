@@ -17,8 +17,6 @@ external addEventListener:
 external dispatchEvent: 'a t -> 'a Yawaramin_BsWebapi_Common.event -> unit = "" [@@bs.send]
 external make: unit -> this Yawaramin_BsWebapi_Common.t = "EventTarget" [@@bs.new]
 
-(** [\[\@\@bs.send.pipe: 'a t\]] (last argument is an ['a EventTarget.t]
-    value). *)
 external removeEventListener:
   typ:string ->
   listener:([
