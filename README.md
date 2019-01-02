@@ -37,7 +37,8 @@ Then, build:
 
 ## Build Docs
 
-You will need `ocamldoc` installed globally. Then:
+You will need `ocamldoc` installed globally, and also need to run the
+build (as above) at least once. Then:
 
     npm run docs
 
