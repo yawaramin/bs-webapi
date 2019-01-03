@@ -5,10 +5,12 @@
     The output JavaScript is meant to be run in the [docs] subdirectory.
     See [scripts/docs.sh] for the actual usage. *)
 
+external format: string -> string array -> string = "" [@@bs.module "util"] [@@bs.variadic] 
+
 (** Relies on OCamldoc's generated HTML output structure. *)
 let link desc contents =
   let descLower = Js.String.toLowerCase desc in
-  let replacement = Yawaramin_BsWebapi_Node_Util.format
+  let replacement = format
     {|<span id="%s$1"><a href="#%s$1" class="keyword">%s</a>|}
     [|desc; desc; descLower|] in
 
