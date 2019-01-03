@@ -12,6 +12,7 @@ ocamldoc \
   -I lib/bs/src \
   -ppx /usr/local/lib/node_modules/bs-platform/lib/bsppx.exe \
   src/$main_module/*.mli \
+  src/$main_module/*.ml \
   src/$main_module.ml
 cd docs
 cp ../style.css .
