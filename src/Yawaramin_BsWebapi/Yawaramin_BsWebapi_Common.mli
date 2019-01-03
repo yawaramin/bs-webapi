@@ -1,5 +1,3 @@
-(**)
-
 type _ event
 type htmlCollection
 type _ iterator

@@ -1,5 +1,3 @@
-(**)
-
 type this = [`eventTarget]
 type 'a t = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
 

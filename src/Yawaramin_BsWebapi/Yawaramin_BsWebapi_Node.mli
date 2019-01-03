@@ -1,5 +1,3 @@
-(**)
-
 module DocumentPosition: sig
   type t = int
 

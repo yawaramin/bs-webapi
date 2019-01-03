@@ -1,5 +1,3 @@
-(**)
-
 type attr = Yawaramin_BsWebapi_Attr.this Yawaramin_BsWebapi_Common.t
 type t = Yawaramin_BsWebapi_Common.namedNodeMap
 

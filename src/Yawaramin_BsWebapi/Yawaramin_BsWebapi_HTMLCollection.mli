@@ -1,5 +1,3 @@
-(**)
-
 type 'a element = 'a Yawaramin_BsWebapi_Element.supertype
 type t = Yawaramin_BsWebapi_Common.htmlCollection
 

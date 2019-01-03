@@ -31,6 +31,14 @@
 <h1>Module <a href="type_Yawaramin_BsWebapi_NodeList.html">Yawaramin_BsWebapi_NodeList</a></h1>
 
 <pre><span class="keyword">module</span> Yawaramin_BsWebapi_NodeList: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi_NodeList.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Careful with labelling the arguments. If you forget, the type error
+    message won't mention a missing label because it will assume the
+    unlabelled argument is the <code class="code">t</code> (last) parameter. Here's a correct
+    usage: <pre class="codepre"><code class="code"><span class="keyword">module</span>&nbsp;<span class="constructor">Web</span>&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi</span><br>
+<span class="keyword">let</span>&nbsp;test&nbsp;(elem:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Web</span>.<span class="constructor">Element</span>.supertype)&nbsp;=&nbsp;elem<br>
+&nbsp;&nbsp;|&gt;&nbsp;<span class="constructor">Web</span>.<span class="constructor">ParentNode</span>.querySelectorAll&nbsp;<span class="string">"p"</span><br>
+&nbsp;&nbsp;|&gt;&nbsp;<span class="constructor">Web</span>.<span class="constructor">NodeList</span>.forEach&nbsp;~callback:(<span class="keyword">fun</span>&nbsp;[@bs]&nbsp;node&nbsp;_&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Js</span>.log&nbsp;node)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 <hr width="100%">
 

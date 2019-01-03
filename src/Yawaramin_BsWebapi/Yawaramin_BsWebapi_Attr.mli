@@ -1,5 +1,3 @@
-(**)
-
 type 'a t = 'a Yawaramin_BsWebapi_Common.t
 type this = [Yawaramin_BsWebapi_Node.this | `attr]
 type 'a subtype = ([> this] as 'a) t

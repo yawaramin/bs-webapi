@@ -1,5 +1,3 @@
-(**)
-
 type 'a iterator = 'a Yawaramin_BsWebapi_Iterator.t
 type 'a node = 'a Yawaramin_BsWebapi_Node.supertype
 type t = Yawaramin_BsWebapi_Common.nodeList
