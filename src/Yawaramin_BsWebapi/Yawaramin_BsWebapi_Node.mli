@@ -39,6 +39,12 @@ external firstChild: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
 external hasChildNodes: 'a subtype -> bool = "" [@@bs.send]
 external insertBefore: newNode:'b subtype -> referenceNode:'c subtype Js.null -> 'b supertype = "" [@@bs.send.pipe: 'a subtype]
 external isDefaultNamespace: string -> bool = "" [@@bs.send.pipe: 'a subtype] 
+
+(** [isEqualNode node1 node2] checks whether [node1] and [node2] contain
+    equal data. The JavaScript documentation also mentions that it checks
+    that they're the same type. Here (and also below for [isSameNode]),
+    we encode that check statically by forcing their exact subtypes to be
+    equal. *)
 external isEqualNode: 'a subtype -> bool = "" [@@bs.send.pipe: 'a subtype]
 external isSameNode: 'a subtype -> bool = "" [@@bs.send.pipe: 'a subtype]
 external lastChild: 'a subtype -> 'b supertype Js.nullable = "" [@@bs.get]
