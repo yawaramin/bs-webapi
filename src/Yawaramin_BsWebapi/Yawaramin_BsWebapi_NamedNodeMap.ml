@@ -1,4 +1,4 @@
-type attr = Yawaramin_BsWebapi_Attr.this Yawaramin_BsWebapi_Common.t
+type attr = Yawaramin_BsWebapi_Attr.this Yawaramin_BsWebapi_EventTarget.t
 type t = Yawaramin_BsWebapi_Common.namedNodeMap
 
 external getNamedItem: string -> attr Js.nullable = "" [@@bs.send.pipe: t]

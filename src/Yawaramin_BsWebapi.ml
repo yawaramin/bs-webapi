@@ -22,33 +22,34 @@
     value you provided supports a crucial property of the type you want)
     so you will always have to account for possible failure to downcast.
 
-    Hopefully, this type safety also translates to errors that are easier
-    to understand. For example:
+    This leads to the following sorts of type errors (I added the
+    [^^^^^^], by the way):
 
     {v We've found a bug for you!
-      /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
+/Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi/Yawaramin_BsWebapi_Test.ml 3:25-30
 
-      1 | module Web = Yawaramin_BsWebapi
-      2 | let test (target: Web.EventTarget.this Web.Common.t): int =
-      3 |   Web.Element.className target
+1 | module Web = Yawaramin_BsWebapi
+2 | let test (target: Web.EventTarget.this Web.EventTarget.t) =
+3 |   Web.Element.className target
+                            ^^^^^^
+This has type:
+  Web.EventTarget.this Web.EventTarget.t (defined as
+    Web.EventTarget.this Yawaramin_BsWebapi_EventTarget.t)
+But somewhere wanted:
+  ([> Web.Element.this ] as 'a) Web.Element.subtype (defined as
+    'a Yawaramin_BsWebapi_EventTarget.t)
 
-      This has type:
-        Web.EventTarget.this Web.Common.t (defined as
-          Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
-      But somewhere wanted:
-        ([> Web.Element.this ] as 'a) Web.Element.subtype (defined as
-          'a Yawaramin_BsWebapi_Common.t)
+The incompatible parts:
+  Web.EventTarget.this (defined as [ `eventTarget ])
+  vs
+  'a (defined as [> `element | `eventTarget | `node ])
+The first variant type does not allow tag(s) `element, `node v}
 
-      The incompatible parts:
-        Web.EventTarget.this (defined as [ `eventTarget ])
-        vs
-        'a (defined as [> `element | `eventTarget | `node ])
-      The first variant type does not allow tag(s) `element, `node v}
-
-    We would read this as: 'this has type "EventTarget Common", but
-    somewhere wanted "Element subtype" '. In other words, we have only an
-    [EventTarget], but the operation we are trying to do requires an
-    [Element]. *)
+    We would interpret this as saying that [target] has type
+    [Web.EventTarget.this Web.EventTarget.t], but the function
+    [className] expects something of type [Web.Element.subtype]. It
+    enforces that we can't call methods of the more specialized [Element]
+    interface on more general [EventTarget] objects. *)
 
 (** A DOM element's attribute as an object. See {{: https://developer.mozilla.org/en-US/docs/Web/API/Attr} https://developer.mozilla.org/en-US/docs/Web/API/Attr} *)
 module Attr = Yawaramin_BsWebapi_Attr

@@ -21,7 +21,7 @@ module Type: sig
   val text: t
 end
 
-type 'a t = 'a Yawaramin_BsWebapi_Common.t
+type 'a t = 'a Yawaramin_BsWebapi_EventTarget.t
 type this = [Yawaramin_BsWebapi_EventTarget.this | `node]
 type 'a subtype = ([> this] as 'a) t
 type 'a supertype = ([< this] as 'a) t

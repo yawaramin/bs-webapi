@@ -3,7 +3,7 @@ type 'a t = ([<
 | `element
 | `document
 | `documentFragment
-] as 'a) Yawaramin_BsWebapi_Common.t
+] as 'a) Yawaramin_BsWebapi_EventTarget.t
 
 external childElementCount: 'a t -> int = "" [@@bs.get]
 external children: 'a t -> Yawaramin_BsWebapi_HTMLCollection.t = "" [@@bs.get]

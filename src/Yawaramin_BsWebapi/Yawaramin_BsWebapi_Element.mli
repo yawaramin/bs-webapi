@@ -1,4 +1,4 @@
-type 'a t = 'a Yawaramin_BsWebapi_Common.t
+type 'a t = 'a Yawaramin_BsWebapi_EventTarget.t
 type attr = Yawaramin_BsWebapi_Attr.this t
 type this = [Yawaramin_BsWebapi_Node.this | `element]
 type 'a subtype = ([> this] as 'a) t

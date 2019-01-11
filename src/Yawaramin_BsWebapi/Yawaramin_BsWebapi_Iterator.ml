@@ -1,2 +1,2 @@
-type 'a t = 'a Yawaramin_BsWebapi_Common.iterator
+type 'a t
 external next: 'a t -> < _done: bool; value: 'a Js.nullable > Js.t = "" [@@bs.send]

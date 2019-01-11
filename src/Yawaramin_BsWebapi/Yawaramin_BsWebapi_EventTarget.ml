@@ -1,10 +1,27 @@
 (**)
 
-type this = [`eventTarget]
-type 'a t = ([> this] as 'a) Yawaramin_BsWebapi_Common.t
+(** A DOM object starting from [EventTarget] and extending to any of its
+    subtypes.
 
-external make: unit -> this Yawaramin_BsWebapi_Common.t =
-  "EventTarget" [@@bs.new]
+    The type parameter is a phantom type (a 'tag') that represents the
+    exact subtype of [EventTarget] that you're dealing with. E.g., if you
+    have a [\[< this\] Yawaramin_BsWebapi_Element.supertype], that means
+    you have something that implements the [Element] (and by extension
+    [Node] and [EventTarget]) interfaces.
+
+    Thus, you can use any of the operations from those modules on values
+    of that type. But you can't use operations from modules which
+    represent subtypes--unless you downcast the value to that subtype.
+
+    Downcasting is implemented by each module with the [cast] function,
+    which safely downcasts by testing the value for a crucial member
+    property it must have to conform to the target type. If it does
+    conform, the cast function returns the downcast value wrapped in a
+    [Some]; if not, it returns a [None]. *)
+type _ t
+type this = [`eventTarget]
+
+external make: unit -> this t = "EventTarget" [@@bs.new]
 
 external addEventListener:
   typ:string ->
