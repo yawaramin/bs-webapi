@@ -67,35 +67,36 @@
     so you will always have to account for possible failure to downcast.
 <p>
 
-    Hopefully, this type safety also translates to errors that are easier
-    to understand. For example:
+    This leads to the following sorts of type errors (I added the
+    <code class="code">^^^^^^</code>, by the way):
 <p>
 
     <pre class="verbatim">We've found a bug for you!
-      /Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi_Test.ml 4:25-30
+/Users/yawar/src/bs-webapi/src/Yawaramin_BsWebapi/Yawaramin_BsWebapi_Test.ml 3:25-30
 
-      1 | module Web = Yawaramin_BsWebapi
-      2 | let test (target: Web.EventTarget.this Web.Common.t): int =
-      3 |   Web.Element.className target
+1 | module Web = Yawaramin_BsWebapi
+2 | let test (target: Web.EventTarget.this Web.EventTarget.t) =
+3 |   Web.Element.className target
+                            ^^^^^^
+This has type:
+  Web.EventTarget.this Web.EventTarget.t (defined as
+    Web.EventTarget.this Yawaramin_BsWebapi_EventTarget.t)
+But somewhere wanted:
+  ([&gt; Web.Element.this ] as 'a) Web.Element.subtype (defined as
+    'a Yawaramin_BsWebapi_EventTarget.t)
 
-      This has type:
-        Web.EventTarget.this Web.Common.t (defined as
-          Web.EventTarget.this Yawaramin_BsWebapi_Common.t)
-      But somewhere wanted:
-        ([&gt; Web.Element.this ] as 'a) Web.Element.subtype (defined as
-          'a Yawaramin_BsWebapi_Common.t)
-
-      The incompatible parts:
-        Web.EventTarget.this (defined as [ `eventTarget ])
-        vs
-        'a (defined as [&gt; `element | `eventTarget | `node ])
-      The first variant type does not allow tag(s) `element, `node</pre>
+The incompatible parts:
+  Web.EventTarget.this (defined as [ `eventTarget ])
+  vs
+  'a (defined as [&gt; `element | `eventTarget | `node ])
+The first variant type does not allow tag(s) `element, `node</pre>
 <p>
 
-    We would read this as: 'this has type "EventTarget Common", but
-    somewhere wanted "Element subtype" '. In other words, we have only an
-    <code class="code"><span class="constructor">EventTarget</span></code>, but the operation we are trying to do requires an
-    <code class="code"><span class="constructor">Element</span></code>.<br>
+    We would interpret this as saying that <code class="code">target</code> has type
+    <code class="code"><span class="constructor">Web</span>.<span class="constructor">EventTarget</span>.this <span class="constructor">Web</span>.<span class="constructor">EventTarget</span>.t</code>, but the function
+    <code class="code">className</code> expects something of type <code class="code"><span class="constructor">Web</span>.<span class="constructor">Element</span>.subtype</code>. It
+    enforces that we can't call methods of the more specialized <code class="code"><span class="constructor">Element</span></code>
+    interface on more general <code class="code"><span class="constructor">EventTarget</span></code> objects.<br>
 </div>
 <hr width="100%">
 

@@ -50,9 +50,6 @@ See <a href="Yawaramin_BsWebapi_NamedNodeMap.html"><code class="code"><span clas
 <pre><span id="TYPEhtmlCollection"><a href="#TYPEhtmlCollection" class="keyword">type</a> <code class="type"></code>htmlCollection</span> </pre>
 
 
-<pre><span id="TYPEiterator"><a href="#TYPEiterator" class="keyword">type</a> <code class="type">'_</code> iterator</span> </pre>
-
-
 <pre><span id="TYPEnamedNodeMap"><a href="#TYPEnamedNodeMap" class="keyword">type</a> <code class="type"></code>namedNodeMap</span> </pre>
 <div class="info ">
 See <a href="Yawaramin_BsWebapi_NamedNodeMap.html"><code class="code"><span class="constructor">Yawaramin_BsWebapi_NamedNodeMap</span></code></a>.<br>
@@ -60,32 +57,6 @@ See <a href="Yawaramin_BsWebapi_NamedNodeMap.html"><code class="code"><span clas
 
 
 <pre><span id="TYPEnodeList"><a href="#TYPEnodeList" class="keyword">type</a> <code class="type"></code>nodeList</span> </pre>
-
-
-<pre><span id="TYPEt"><a href="#TYPEt" class="keyword">type</a> <code class="type">'_</code> t</span> </pre>
-<div class="info ">
-A DOM object starting from <code class="code"><span class="constructor">EventTarget</span></code> and extending to any of its
-    subtypes.
-<p>
-
-    The type parameter is a phantom type (a 'tag') that represents the
-    exact subtype of <code class="code"><span class="constructor">EventTarget</span></code> that you're dealing with. E.g., if you
-    have a <code class="code">[&lt; this] supertype</code>, that means you have something that
-    implements the <code class="code"><span class="constructor">Element</span></code> (and by extension <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">EventTarget</span></code>)
-    interfaces.
-<p>
-
-    Thus, you can use any of the operations from those modules on values
-    of this type. But you can't use operations from modules which
-    represent subtypes--unless you downcast the value to that subtype.
-<p>
-
-    Downcasting is implemented by each module with the <code class="code">cast</code> function,
-    which safely downcasts by testing the value for a crucial member
-    property it must have to conform to the target type. If it does
-    conform, the cast function returns the downcast value wrapped in a
-    <code class="code"><span class="constructor">Some</span></code>; if not, it returns a <code class="code"><span class="constructor">None</span></code>.<br>
-</div>
 
 
 <pre><span id="VALunsafeCoerce"><a href="#VALunsafeCoerce" class="keyword">val</a> unsafeCoerce</span> : <code class="type">'a -> 'b</code></pre><div class="info ">
