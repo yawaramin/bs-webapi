@@ -18,10 +18,16 @@ let link desc contents =
   |. Js.Re.fromStringWithFlags ~flags:"g"
   |. Js.String.replaceByRe replacement contents
 
+let dotLink parentModule contents = "%s_"
+  |. format [|parentModule|]
+  |. Js.Re.fromStringWithFlags ~flags:"g"
+  |. Js.String.replaceByRe {j|$parentModule.|j} contents
+
 let linkNames filename = filename
   |> Node.Fs.readFileAsUtf8Sync
   |> link "TYPE"
   |> link "VAL"
+  |> dotLink "Yawaramin_BsWebapi"
   |> Node.Fs.writeFileAsUtf8Sync filename
 
 let processHtmls filename =
