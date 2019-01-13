@@ -1,5 +1,7 @@
 (** {!indexlist}
 
+    {1 What}
+
     BuckleScript bindings to the
     {{:https://developer.mozilla.org/en-US/docs/Web/API}Web API}.
 
@@ -7,7 +9,7 @@
 
     {{:https://github.com/yawaramin/bs-webapi}GitHub}
 
-    These bindings are organised into modules that correspond to the API
+    These bindings are organized into modules that correspond to the API
     class hierarchy. All modules in the hierarchy share a common
     [EventTarget] modelled as an abstract type. If you have a value of,
     say, an [HTMLElement], you will be able to manipulate it with the
@@ -49,7 +51,46 @@ The first variant type does not allow tag(s) `element, `node v}
     [Web.EventTarget.this Web.EventTarget.t], but the function
     [className] expects something of type [Web.Element.subtype]. It
     enforces that we can't call methods of the more specialized [Element]
-    interface on more general [EventTarget] objects. *)
+    interface on more general [EventTarget] objects.
+
+    {1 Why}
+
+    You probably know about the ReasonML community-developed
+    {{:https://github.com/reasonml-community/bs-webapi-incubator}Web API}
+    package and are wondering why this one exists.
+
+    First of all, you should probably use the community package. Its
+    types are interoperable with the
+    {{:https://bucklescript.github.io/bucklescript/api/Dom.html}BuckleScript
+    DOM API}, which enables them to 'talk to' other packages which also
+    use the same types.
+
+    In the community package, types in the hierarchy (like [Element]) are
+    organized into modules which contain their type members and those of
+    all their supertypes. That means that (for example) if you have an
+    [Element.t] value, you can call [Element.addEventListener "click"
+    listener element] because the [Element] module provides all members
+    of the [EventTarget] supertype.
+
+    In contrast, this package splits up members of types in the Web API
+    inheritance hierarchy into their respective modules. So if you have
+    an [Element.t] value, you need to call [EventTarget.addEventListener
+    "click" ~listener element]. I find it cleaner to compartmentalize the
+    different operations into their own modules and make the types
+    compatible only if they obey the Web API inheritance hierarchy.
+
+    {1 Usage}
+
+    In practice, this might make it difficult to remember which module
+    contains the operations you need. For example, where can you find
+    [querySelector]?
+
+    Fortunately, this is where this documentation site comes in. You can
+    go to the {{:index_values.html}values index}, find the word
+    'querySelector' in that page, and find that it's in the [ParentNode]
+    module. From there you can jump to the module doc page and look up
+    the exact usage. I find this documentation-driven approach a better
+    fit with an API like Web API, that has a large surface area. *)
 
 (** A DOM element's attribute as an object. See {{: https://developer.mozilla.org/en-US/docs/Web/API/Attr} https://developer.mozilla.org/en-US/docs/Web/API/Attr} *)
 module Attr = Yawaramin_BsWebapi_Attr
