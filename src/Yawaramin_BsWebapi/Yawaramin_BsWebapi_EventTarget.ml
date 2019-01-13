@@ -21,13 +21,17 @@
 type _ t
 type this = [`eventTarget]
 
+type _ event
+type 'a eventHandler = 'a event -> unit [@bs]
+type 'a eventListener = < handleEvent: 'a eventHandler > Js.t
+
 external make: unit -> this t = "EventTarget" [@@bs.new]
 
 external addEventListener:
   typ:string ->
   listener:([
-  | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
-  | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
+  | `eventListener of 'a eventListener
+  | `eventHandler of 'a eventHandler] [@bs.unwrap]) ->
   ?options:([
   | `options of < capture: bool; once: bool; passive: bool > Js.t
   | `useCapture of bool ] [@bs.unwrap]) ->
@@ -37,12 +41,12 @@ external addEventListener:
 external removeEventListener:
   typ:string ->
   listener:([
-  | `eventListener of 'a Yawaramin_BsWebapi_Common.eventListener
-  | `eventHandler of 'a Yawaramin_BsWebapi_Common.eventHandler] [@bs.unwrap]) ->
+  | `eventListener of 'a eventListener
+  | `eventHandler of 'a eventHandler] [@bs.unwrap]) ->
   ?options:([
   | `options of < capture: bool; passive: bool > Js.t
   | `useCapture of bool ] [@bs.unwrap]) ->
   unit =
   "" [@@bs.send.pipe: 'a t]
   
-external dispatchEvent: 'a t -> 'a Yawaramin_BsWebapi_Common.event -> unit = "" [@@bs.send]
+external dispatchEvent: 'a t -> 'a event -> unit = "" [@@bs.send]
