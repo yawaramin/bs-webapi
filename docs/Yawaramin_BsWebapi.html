@@ -40,6 +40,9 @@
 
 <p>
 
+    <h1 id="1_What">What</h1>
+<p>
+
     BuckleScript bindings to the
     <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
 <p>
@@ -50,7 +53,7 @@
     <a href="https://github.com/yawaramin/bs-webapi">GitHub</a>
 <p>
 
-    These bindings are organised into modules that correspond to the API
+    These bindings are organized into modules that correspond to the API
     class hierarchy. All modules in the hierarchy share a common
     <code class="code"><span class="constructor">EventTarget</span></code> modelled as an abstract type. If you have a value of,
     say, an <code class="code"><span class="constructor">HTMLElement</span></code>, you will be able to manipulate it with the
@@ -96,7 +99,54 @@ The first variant type does not allow tag(s) `element, `node</pre>
     <code class="code"><span class="constructor">Web</span>.<span class="constructor">EventTarget</span>.this <span class="constructor">Web</span>.<span class="constructor">EventTarget</span>.t</code>, but the function
     <code class="code">className</code> expects something of type <code class="code"><span class="constructor">Web</span>.<span class="constructor">Element</span>.subtype</code>. It
     enforces that we can't call methods of the more specialized <code class="code"><span class="constructor">Element</span></code>
-    interface on more general <code class="code"><span class="constructor">EventTarget</span></code> objects.<br>
+    interface on more general <code class="code"><span class="constructor">EventTarget</span></code> objects.
+<p>
+
+    <h1 id="1_Why">Why</h1>
+<p>
+
+    You probably know about the ReasonML community-developed
+    <a href="https://github.com/reasonml-community/bs-webapi-incubator">Web API</a>
+    package and are wondering why this one exists.
+<p>
+
+    First of all, you should probably use the community package. Its
+    types are interoperable with the
+    <a href="https://bucklescript.github.io/bucklescript/api/Dom.html">BuckleScript
+    DOM API</a>, which enables them to 'talk to' other packages which also
+    use the same types.
+<p>
+
+    In the community package, types in the hierarchy (like <code class="code"><span class="constructor">Element</span></code>) are
+    organized into modules which contain their type members and those of
+    all their supertypes. That means that (for example) if you have an
+    <code class="code"><span class="constructor">Element</span>.t</code> value, you can call <code class="code"><span class="constructor">Element</span>.addEventListener <span class="string">"click"</span>
+    listener element</code> because the <code class="code"><span class="constructor">Element</span></code> module provides all members
+    of the <code class="code"><span class="constructor">EventTarget</span></code> supertype.
+<p>
+
+    In contrast, this package splits up members of types in the Web API
+    inheritance hierarchy into their respective modules. So if you have
+    an <code class="code"><span class="constructor">Element</span>.t</code> value, you need to call <code class="code"><span class="constructor">EventTarget</span>.addEventListener
+    <span class="string">"click"</span> ~listener element</code>. I find it cleaner to compartmentalize the
+    different operations into their own modules and make the types
+    compatible only if they obey the Web API inheritance hierarchy.
+<p>
+
+    <h1 id="1_Usage">Usage</h1>
+<p>
+
+    In practice, this might make it difficult to remember which module
+    contains the operations you need. For example, where can you find
+    <code class="code">querySelector</code>?
+<p>
+
+    Fortunately, this is where this documentation site comes in. You can
+    go to the <a href="index_values.html">values index</a>, find the word
+    'querySelector' in that page, and find that it's in the <code class="code"><span class="constructor">ParentNode</span></code>
+    module. From there you can jump to the module doc page and look up
+    the exact usage. I find this documentation-driven approach a better
+    fit with an API like Web API, that has a large surface area.<br>
 </div>
 <hr width="100%">
 
