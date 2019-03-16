@@ -1,0 +1,159 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Yawaramin_BsWebapi_Attr" rel="Chapter" href="Yawaramin_BsWebapi_Attr.html">
+<link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
+<link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi_Common" rel="Chapter" href="Yawaramin_BsWebapi_Common.html">
+<link title="Yawaramin_BsWebapi_Document" rel="Chapter" href="Yawaramin_BsWebapi_Document.html">
+<link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
+<link title="Yawaramin_BsWebapi_HTMLCollection" rel="Chapter" href="Yawaramin_BsWebapi_HTMLCollection.html">
+<link title="Yawaramin_BsWebapi_Iterator" rel="Chapter" href="Yawaramin_BsWebapi_Iterator.html">
+<link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
+<link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
+<link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
+<link title="Yawaramin_BsWebapi_Test" rel="Chapter" href="Yawaramin_BsWebapi_Test.html">
+<link title="Test" rel="Chapter" href="Test.html">
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi_html"><title>Yawaramin_BsWebapi_Element</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;t&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_EventTarget</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;attr&nbsp;=&nbsp;<span class="constructor">Yawaramin_BsWebapi_Attr</span>.this&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;this&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>element&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>eventTarget&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>node&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;subtype&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;supertype&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;attributes&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_NamedNodeMap</span>.t&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cast&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.supertype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.t&nbsp;option<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;classList&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;array&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;className&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clientHeight&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clientLeft&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clientTop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clientWidth&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;getAttribute&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;getAttributeNames&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;array&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;getAttributeNS&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?namespace:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;localName:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;getElementsByClassName&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.supertype<br>
+&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;getElementsByTagName&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.supertype<br>
+&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;getElementsByTagNameNS&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?namespace:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;localName:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.supertype<br>
+&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hasAttribute&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hasAttributeNS&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?namespace:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;localName:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;id&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;innerHTML&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;localName&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;namespaceURI&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;prefix&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="constructor">Js</span>.nullable&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;removeAttribute&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;removeAttributeNS&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?namespace:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;localName:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;scrollHeight&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;scrollLeft&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;scrollTop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;scrollWidth&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setAttribute&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qualifiedName:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;value:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setAttributeNS&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?namespace:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;qualifiedName:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;value:string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setClassName&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"className"</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setId&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"id"</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setInnerHTML&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"innerHTML"</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setScrollLeft&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"scrollLeft"</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;setScrollTop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"scrollTop"</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;tagName&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.this&nbsp;]&nbsp;<span class="constructor">Yawaramin_BsWebapi_Element</span>.subtype&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;=&nbsp;<span class="string">""</span>&nbsp;<span class="string">"BS-EXTERNAL"</span><br>
+<span class="keyword">end</span></code></body></html>

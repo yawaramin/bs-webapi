@@ -1,7 +1,6 @@
 main_module=Yawaramin_BsWebapi
 
-rm -rf docs
-mkdir docs
+rm docs/*.html
 ocamldoc \
   -html \
   -css-style style.css \
@@ -15,8 +14,6 @@ ocamldoc \
   src/$main_module/*.ml \
   src/$main_module.ml
 cd docs
-rm *$main_module.*.html
-for f in *.html; do mv "$f" "${f/${main_module}_/$main_module.}"; done
-cp ../style.css .
-cp $main_module.html index.html
-node ../src/$main_module/${main_module}_OCamldoc.bs.js
+rm *${main_module}.*.html
+node ../src/OCamldoc.bs.js
+cp index.html.template index.html

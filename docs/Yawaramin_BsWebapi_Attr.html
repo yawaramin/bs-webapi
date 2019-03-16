@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Yawaramin_BsWebapi_Element.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Yawaramin_BsWebapi_Attr" rel="Chapter" href="Yawaramin_BsWebapi_Attr.html">
+<link title="Yawaramin_BsWebapi_Element" rel="Chapter" href="Yawaramin_BsWebapi_Element.html">
+<link title="Yawaramin_BsWebapi_Node" rel="Chapter" href="Yawaramin_BsWebapi_Node.html">
+<link title="Yawaramin_BsWebapi_Common" rel="Chapter" href="Yawaramin_BsWebapi_Common.html">
+<link title="Yawaramin_BsWebapi_Document" rel="Chapter" href="Yawaramin_BsWebapi_Document.html">
+<link title="Yawaramin_BsWebapi_EventTarget" rel="Chapter" href="Yawaramin_BsWebapi_EventTarget.html">
+<link title="Yawaramin_BsWebapi_HTMLCollection" rel="Chapter" href="Yawaramin_BsWebapi_HTMLCollection.html">
+<link title="Yawaramin_BsWebapi_Iterator" rel="Chapter" href="Yawaramin_BsWebapi_Iterator.html">
+<link title="Yawaramin_BsWebapi_NamedNodeMap" rel="Chapter" href="Yawaramin_BsWebapi_NamedNodeMap.html">
+<link title="Yawaramin_BsWebapi_NodeList" rel="Chapter" href="Yawaramin_BsWebapi_NodeList.html">
+<link title="Yawaramin_BsWebapi_NonDocumentTypeChildNode" rel="Chapter" href="Yawaramin_BsWebapi_NonDocumentTypeChildNode.html">
+<link title="Yawaramin_BsWebapi_ParentNode" rel="Chapter" href="Yawaramin_BsWebapi_ParentNode.html">
+<link title="Yawaramin_BsWebapi_Test" rel="Chapter" href="Yawaramin_BsWebapi_Test.html">
+<link title="Test" rel="Chapter" href="Test.html">
+<link title="Yawaramin_BsWebapi" rel="Chapter" href="Yawaramin_BsWebapi_html"><title>Yawaramin_BsWebapi_Attr</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Yawaramin_BsWebapi_Element.html" title="Yawaramin_BsWebapi_Element">Next</a>
+</div>
+<h1>Module <a href="type_Yawaramin_BsWebapi_Attr.html">Yawaramin_BsWebapi_Attr</a></h1>
+
+<pre><span class="keyword">module</span> Yawaramin_BsWebapi_Attr: <code class="code"><span class="keyword">sig</span></code> <a href="Yawaramin_BsWebapi_Attr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+
+<pre><span id="TYPEt"><a href="#TYPEt" class="keyword">type</a> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Yawaramin_BsWebapi_EventTarget.html#TYPEt">Yawaramin_BsWebapi_EventTarget.t</a></code> </pre>
+
+
+<pre><span id="TYPEthis"><a href="#TYPEthis" class="keyword">type</a> <code class="type"></code>this</span> = <code class="type">[ `attr | `eventTarget | `node ]</code> </pre>
+
+
+<pre><span id="TYPEsubtype"><a href="#TYPEsubtype" class="keyword">type</a> <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ]</code> subtype</span> = <code class="type">([> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Attr.html#TYPEt">t</a></code> </pre>
+
+
+<pre><span id="TYPEsupertype"><a href="#TYPEsupertype" class="keyword">type</a> <code class="type">[< <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ]</code> supertype</span> = <code class="type">([< <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] as 'a) <a href="Yawaramin_BsWebapi_Attr.html#TYPEt">t</a></code> </pre>
+
+
+<pre><span id="VALcast"><a href="#VALcast" class="keyword">val</a> cast</span> : <code class="type">[< <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsupertype">supertype</a> -><br>       <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> <a href="Yawaramin_BsWebapi_Attr.html#TYPEt">t</a> option</code></pre>
+<pre><span id="VALlocalName"><a href="#VALlocalName" class="keyword">val</a> localName</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsubtype">subtype</a> -> string</code></pre>
+<pre><span id="VALnamespaceURI"><a href="#VALnamespaceURI" class="keyword">val</a> namespaceURI</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
+<pre><span id="VALname"><a href="#VALname" class="keyword">val</a> name</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsubtype">subtype</a> -> string</code></pre>
+<pre><span id="VALownerElement"><a href="#VALownerElement" class="keyword">val</a> ownerElement</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsubtype">subtype</a> -><br>       [ `element | `eventTarget | `node ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEt">t</a> Js.nullable</code></pre>
+<pre><span id="VALprefix"><a href="#VALprefix" class="keyword">val</a> prefix</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsubtype">subtype</a> -><br>       string Js.nullable</code></pre>
+<pre><span id="VALvalue"><a href="#VALvalue" class="keyword">val</a> value</span> : <code class="type">[> <a href="Yawaramin_BsWebapi_Attr.html#TYPEthis">this</a> ] <a href="Yawaramin_BsWebapi_Attr.html#TYPEsubtype">subtype</a> -> string</code></pre></body></html>
